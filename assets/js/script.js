@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const numericValue = parseInt(target.replace(/[^0-9]/g, ''));
         
         let current = 0;
-        const increment = numericValue / 50;
+        const increment = numericValue / 80;
         const timer = setInterval(() => {
             current += increment;
             if (current >= numericValue) {
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (isPlus && !isKFormat) displayValue = displayValue + '+';
             
             element.innerText = displayValue;
-        }, 30);
+        }, 50);
     };
 
     const statsObserver = new IntersectionObserver((entries) => {
@@ -179,6 +179,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // cursor-follow glow removed
 });
 
 // Parallax effect removed for consistent scrolling
