@@ -185,8 +185,37 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Parallax effect removed for consistent scrolling
 
-// Add loading animation
+    // Add loading animation
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
+});
+
+// Board page section animations
+document.addEventListener('DOMContentLoaded', function() {
+    const boardGroups = document.querySelectorAll('.board-section-group');
+    if (boardGroups.length > 0) {
+        const boardObserverOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const boardObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.classList.add('animate-in');
+                    boardObserver.unobserve(entry.target);
+                }
+            });
+        }, boardObserverOptions);
+
+        boardGroups.forEach((group, index) => {
+            group.style.opacity = '0';
+            group.style.transform = 'translateY(40px)';
+            group.style.transition = `opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.2}s, transform 0.8s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.2}s`;
+            boardObserver.observe(group);
+        });
+    }
 });
 
