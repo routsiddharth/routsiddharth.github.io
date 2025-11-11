@@ -181,6 +181,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // cursor-follow glow removed
+
+    // Contact page topic selector
+    const contactSelect = document.getElementById('contact-topic');
+    const contactDetails = document.querySelectorAll('.contact-detail');
+
+    if (contactSelect && contactDetails.length > 0) {
+        const showDetail = (detail) => {
+            detail.style.display = 'block';
+            requestAnimationFrame(() => detail.classList.add('active'));
+        };
+
+        const hideDetail = (detail) => {
+            detail.classList.remove('active');
+            detail.style.display = 'none';
+        };
+
+        const updateContactDetails = () => {
+            const selected = contactSelect.value;
+            if (!selected) return;
+            contactDetails.forEach(detail => {
+                if (detail.dataset.topic === selected) {
+                    showDetail(detail);
+                } else if (detail.style.display !== 'none') {
+                    hideDetail(detail);
+                }
+            });
+        };
+
+        contactDetails.forEach(detail => {
+            detail.style.display = 'none';
+        });
+
+        contactSelect.addEventListener('change', updateContactDetails);
+
+    }
 });
 
 // Parallax effect removed for consistent scrolling
