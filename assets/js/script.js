@@ -2,11 +2,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const profileCard = document.querySelector('.profile-card');
     if (profileCard) {
-        // Animation is handled via CSS, but we can add any additional JS interactions here
         profileCard.style.opacity = '0';
         profileCard.style.transform = 'translateY(10px)';
-        
-        // Trigger animation after a brief delay
+
         setTimeout(() => {
             profileCard.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             profileCard.style.opacity = '1';
