@@ -25,6 +25,7 @@ body {
 }
 
 .hero-container {
+    position: relative;
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
@@ -181,6 +182,31 @@ body {
     letter-spacing: 0.05em;
     margin-bottom: 2rem;
     color: var(--text-color);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.3);
+    animation: bounce 2s ease infinite;
+    transition: opacity 0.4s ease;
+}
+
+.scroll-indicator.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(8px);
+    }
 }
 
 /* Experience Section */
