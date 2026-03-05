@@ -12,6 +12,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 50);
     }
 
+    // Hide scroll indicator on scroll
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                scrollIndicator.classList.add('hidden');
+            } else {
+                scrollIndicator.classList.remove('hidden');
+            }
+        }, { passive: true });
+    }
+
     // Add subtle hover effects to social buttons
     const socialButtons = document.querySelectorAll('.social-button');
     socialButtons.forEach(button => {
