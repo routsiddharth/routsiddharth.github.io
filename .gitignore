@@ -34,3 +34,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# spotify tooling (not part of the static site)
+spotify-auth/
+spotify-worker/
+
