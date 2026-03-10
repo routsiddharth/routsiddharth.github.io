@@ -31,4 +31,21 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
         });
     });
+
+    // Fetch last played Spotify track
+    const WORKER_URL = 'https://spotify-last-played.routsiddharth2911.workers.dev/last-played';
+    fetch(WORKER_URL)
+        .then(res => res.json())
+        .then(data => {
+            if (data.name) {
+                document.getElementById('spotify-track').textContent = data.name;
+                document.getElementById('spotify-artist').textContent = data.artist;
+                document.getElementById('spotify-album-art').src = data.albumArt;
+                document.getElementById('spotify-link').href = data.songUrl;
+                document.getElementById('spotify-widget').style.display = 'block';
+            }
+        })
+        .catch(() => {
+            // Widget stays hidden on error — graceful degradation
+        });
 });
