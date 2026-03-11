@@ -427,7 +427,7 @@ body {
         gap: 0.75rem;
     }
 
-    .profile-image {
+    .profile-image-wrapper {
         width: 70px;
         height: 70px;
     }
