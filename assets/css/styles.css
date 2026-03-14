@@ -452,7 +452,7 @@ body {
     }
 
     .spotify-widget {
-        width: 100%;
+        width: calc(5 * 40px + 4 * 0.375rem);
     }
 
     #spotify-album-art {
