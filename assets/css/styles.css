@@ -145,8 +145,8 @@ button { font: inherit; cursor: pointer; }
 }
 
 .spotify-art-wrap {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     border-radius: 8px;
     background: linear-gradient(135deg, #2a2a2a, #1a1a1a);
     flex-shrink: 0;
@@ -172,8 +172,7 @@ button { font: inherit; cursor: pointer; }
 .spotify-meta {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 38px;
+    line-height: 1.2;
     min-width: 0;
 }
 
@@ -189,10 +188,9 @@ button { font: inherit; cursor: pointer; }
 }
 
 .spotify-track {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--text-primary);
-    line-height: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -201,9 +199,11 @@ button { font: inherit; cursor: pointer; }
 }
 
 .spotify-artist {
-    font-size: 13px;
+    font-family: var(--font-mono);
+    font-size: 11px;
     color: var(--text-faint);
-    line-height: 1;
+    letter-spacing: 0.3px;
+    margin-top: 2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -850,7 +850,7 @@ a.currently-title:hover {
 
     /* compact spotify card: hide track/artist text, keep art + icon */
     .spotify-card { padding: 4px; gap: 6px; }
-    .spotify-art-wrap { width: 34px; height: 34px; }
+    .spotify-art-wrap { width: 36px; height: 36px; }
     .spotify-meta { display: none; }
     .spotify-label { display: none; }
 
@@ -941,7 +941,7 @@ a.currently-title:hover {
     .avatar-img { width: 34px; height: 34px; }
 
     .spotify-card { gap: 4px; }
-    .spotify-art-wrap { width: 32px; height: 32px; }
+    .spotify-art-wrap { width: 34px; height: 34px; }
     .spotify-icon { width: 16px; height: 16px; }
 
     .about-para { font-size: 15px; }
