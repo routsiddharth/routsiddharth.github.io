@@ -19,6 +19,27 @@
     });
 })();
 
+// Selected work — tab switcher
+(function () {
+    const tabs = document.querySelectorAll('.work-tab');
+    const cards = document.querySelectorAll('.work-card-detail');
+    if (!tabs.length || !cards.length) return;
+
+    tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+            const target = tab.dataset.target;
+            tabs.forEach((t) => {
+                const active = t === tab;
+                t.classList.toggle('is-active', active);
+                t.setAttribute('aria-selected', String(active));
+            });
+            cards.forEach((c) => {
+                c.classList.toggle('is-active', c.dataset.id === target);
+            });
+        });
+    });
+})();
+
 // F1 races since Bahrain GP 2016 (the first one I watched).
 // Estimates ~22 races/year so the count creeps up on its own.
 (function () {

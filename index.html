@@ -234,49 +234,97 @@
         </section>
 
         <!-- SELECTED WORK -->
-        <!--
         <section class="section section-grid" id="work">
             <p class="section-label">Selected work</p>
             <div class="section-content">
-                <p class="section-sub">Things I've shipped or am shipping</p>
-            </div>
-            <div class="work-grid">
+                <div class="work-tabs" role="tablist" aria-label="Selected work">
+                    <button class="work-tab is-active" type="button" role="tab" aria-selected="true" data-target="prosperity">IMC Prosperity 4</button>
+                    <button class="work-tab" type="button" role="tab" aria-selected="false" data-target="bridgewater">Bridgewater Forecasting</button>
+                    <button class="work-tab" type="button" role="tab" aria-selected="false" data-target="sundial">Sundial</button>
+                    <button class="work-tab" type="button" role="tab" aria-selected="false" data-target="govo">Govo</button>
+                </div>
 
-                <a class="work-card" href="#" rel="noopener noreferrer">
-                    <div class="work-preview" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></svg>
-                    </div>
-                    <h3 class="work-title">Prosperity 4</h3>
-                    <p class="work-desc">Monte Carlo pricers for exotic derivatives and the bidding strategy that landed top 2%.</p>
-                </a>
+                <div class="work-cards">
+                    <article class="work-card-detail is-active" data-id="prosperity" role="tabpanel">
+                        <div class="work-card-head">
+                            <p class="work-kicker">competition · 2026</p>
+                        </div>
+                        <h3 class="work-card-title">IMC Prosperity 4</h3>
+                        <p class="work-card-desc">Algorithmic trading competition combining live programmatic rounds against bots with manual game-theoretic rounds. Built market-making engines on five simultaneous instruments, options-pricing infrastructure (GBM Monte Carlo, IV-surface fitting), and Bayesian opponent modeling for the auction rounds — predicted realized bid distributions with ~80% accuracy.</p>
+                        <div class="work-card-meta">
+                            <div class="work-meta-col">
+                                <p class="work-meta-label">result</p>
+                                <p class="work-meta-value">340 / 22,000 · Top 2%</p>
+                            </div>
+                            <div class="work-meta-col">
+                                <p class="work-meta-label">stack</p>
+                                <p class="work-meta-value">Python · NumPy · SciPy</p>
+                            </div>
+                        </div>
+                    </article>
 
-                <a class="work-card" href="https://www.unionsquarebanking.com" target="_blank" rel="noopener noreferrer">
-                    <div class="work-preview" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 4a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-6z"/><path d="M3 14a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-6z"/><path d="M7 7l0 .01"/><path d="M7 17l0 .01"/></svg>
-                    </div>
-                    <h3 class="work-title">Browser orchestration</h3>
-                    <p class="work-desc">Shipping reliable multi-step browser automation at production scale.</p>
-                </a>
+                    <article class="work-card-detail" data-id="bridgewater" role="tabpanel">
+                        <div class="work-card-head">
+                            <p class="work-kicker">competition · 2026</p>
+                        </div>
+                        <h3 class="work-card-title">Bridgewater × Metaculus</h3>
+                        <p class="work-card-desc">Geopolitical and macro forecasting competition. Built an ensemble system combining Tetlock's superforecasting framework — base-rate anchoring, Fermi decomposition, Bayesian updating — with a 4-agent LLM debate pipeline (propose → critique → refine → judge), aggregated via geometric mean of odds and extremized against historical resolved questions.</p>
+                        <div class="work-card-meta">
+                            <div class="work-meta-col">
+                                <p class="work-meta-label">result</p>
+                                <p class="work-meta-value">100 / 3,132 · Top 3%</p>
+                            </div>
+                            <div class="work-meta-col">
+                                <p class="work-meta-label">stack</p>
+                                <p class="work-meta-value">Python · LLM orchestration</p>
+                            </div>
+                        </div>
+                    </article>
 
-                <a class="work-card" href="https://apps.apple.com/us/app/govo-discover-your-taste/id6749336381" target="_blank" rel="noopener noreferrer">
-                    <div class="work-preview" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 21l-1 -1l-1 -1l-1 -1l-1 -1l-1 -1l-1 -1l-1 -1l-1 -1l-.5 -.5l-.5 -.5"/><path d="M3.5 14.5l8.5 -8.5l8.5 8.5"/><path d="M19 21l1 -1l1 -1l-9 -9l-9 9l1 1l1 1"/></svg>
-                    </div>
-                    <h3 class="work-title">Govo</h3>
-                    <p class="work-desc">Food recommendation engine with a 2k+ waitlist before launch. Live on the App Store.</p>
-                </a>
+                    <article class="work-card-detail" data-id="sundial" role="tabpanel">
+                        <div class="work-card-head">
+                            <p class="work-kicker">project · 2026</p>
+                            <a class="work-card-link" href="https://github.com/routsiddharth/sundial" target="_blank" rel="noopener noreferrer" aria-label="Open Sundial on GitHub">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </a>
+                        </div>
+                        <h3 class="work-card-title">Sundial</h3>
+                        <p class="work-card-desc">Columbia-specific prediction market, built solo end-to-end. Continuous double-auction matching engine for liquid books, with LMSR automated market making for cold-start liquidity on new markets. Real-time WebSocket price feeds and 20+ campus-outcome markets staged for go-live.</p>
+                        <div class="work-card-meta">
+                            <div class="work-meta-col">
+                                <p class="work-meta-label">status</p>
+                                <p class="work-meta-value">500-trader waitlist</p>
+                            </div>
+                            <div class="work-meta-col">
+                                <p class="work-meta-label">stack</p>
+                                <p class="work-meta-value">Next.js · Supabase · Tailwind</p>
+                            </div>
+                        </div>
+                    </article>
 
-                <a class="work-card" href="#" rel="noopener noreferrer">
-                    <div class="work-preview" aria-hidden="true">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 3l-4 7l4 7"/><path d="M15 3l4 7l-4 7"/></svg>
-                    </div>
-                    <h3 class="work-title">SFUDA at Oxford</h3>
-                    <p class="work-desc">Source-free unsupervised domain adaptation, supervised by Dr. Pramit Saha.</p>
-                </a>
-
+                    <article class="work-card-detail" data-id="govo" role="tabpanel">
+                        <div class="work-card-head">
+                            <p class="work-kicker">project · 2025</p>
+                            <a class="work-card-link" href="https://apps.apple.com/us/app/govo-discover-your-taste/id6749336381" target="_blank" rel="noopener noreferrer" aria-label="Open Govo on the App Store">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                            </a>
+                        </div>
+                        <h3 class="work-card-title">Govo</h3>
+                        <p class="work-card-desc">Food recommendation iOS app, co-founded and live on the App Store. Builds a per-user taste model from in-app swipe interactions and serves real-time recommendations. Pretrained text embeddings with cosine similarity over running user swipe vectors — 92% pairwise accuracy after 20 swipes.</p>
+                        <div class="work-card-meta">
+                            <div class="work-meta-col">
+                                <p class="work-meta-label">users</p>
+                                <p class="work-meta-value">2,000+ · 40% wk-1 retention</p>
+                            </div>
+                            <div class="work-meta-col">
+                                <p class="work-meta-label">stack</p>
+                                <p class="work-meta-value">Swift · TypeScript · Firebase</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
-        -->
 
         <!-- WRITING -->
         <!--
