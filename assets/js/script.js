@@ -1,34 +1,47 @@
-// Smooth fade-in animation on page load
-document.addEventListener('DOMContentLoaded', function() {
-    const profileCard = document.querySelector('.profile-card');
-    if (profileCard) {
-        profileCard.style.opacity = '0';
-        profileCard.style.transform = 'translateY(10px)';
+// Experience expand/collapse — animates via CSS grid-template-rows transition.
+(function () {
+    const list = document.querySelector('.experience-list');
+    const hidden = document.getElementById('experience-hidden');
+    const button = document.querySelector('.experience-toggle');
+    if (!list || !hidden || !button) return;
 
-        setTimeout(() => {
-            profileCard.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            profileCard.style.opacity = '1';
-            profileCard.style.transform = 'translateY(0)';
-        }, 50);
-    }
+    const label = button.querySelector('.experience-toggle-text');
+    const hiddenCount = hidden.querySelectorAll('.experience-entry').length;
 
-    // Hide scroll indicator on scroll
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    if (scrollIndicator) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 50) {
-                scrollIndicator.classList.add('hidden');
-            } else {
-                scrollIndicator.classList.remove('hidden');
-            }
-        }, { passive: true });
-    }
-
-    // Add subtle hover effects to social buttons
-    const socialButtons = document.querySelectorAll('.social-button');
-    socialButtons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-            this.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
-        });
+    button.addEventListener('click', () => {
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        const next = !isExpanded;
+        button.setAttribute('aria-expanded', String(next));
+        list.dataset.expanded = String(next);
+        hidden.dataset.collapsed = String(!next);
+        hidden.setAttribute('aria-hidden', String(!next));
+        label.textContent = next ? 'Show less' : `Show ${hiddenCount} more`;
     });
-});
+})();
+
+// Spotify last-played — fetched via Cloudflare Worker proxy.
+// On failure (e.g. CORS off-origin during local dev), the pill stays as
+// its fallback state showing just the green Spotify icon.
+(function () {
+    const WORKER_URL = 'https://spotify-last-played.routsiddharth2911.workers.dev/last-played';
+    const card = document.getElementById('spotify-link');
+    if (!card) return;
+
+    fetch(WORKER_URL, { mode: 'cors' })
+        .then((res) => (res.ok ? res.json() : Promise.reject(res.status)))
+        .then((data) => {
+            if (!data || !data.name) return;
+            document.getElementById('spotify-track').textContent = data.name;
+            document.getElementById('spotify-artist').textContent = data.artist || '';
+            if (data.albumArt) {
+                document.getElementById('spotify-album-art').src = data.albumArt;
+            }
+            if (data.songUrl) {
+                card.href = data.songUrl;
+            }
+            card.dataset.state = 'ready';
+        })
+        .catch(() => {
+            card.dataset.state = 'error';
+        });
+})();

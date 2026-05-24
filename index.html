@@ -4,162 +4,378 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Siddharth Rout</title>
-    
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="description" content="Siddharth Rout — math + cs at Columbia. Building.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <div class="hero-container">
-        <div class="profile-card">
-            <div class="profile-content-wrapper">
-                <div class="profile-header">
-                    <div class="profile-image-wrapper">
-                        <img src="assets/images/headshot.jpg" alt="Sid Rout" class="profile-image">
+    <header class="site-header">
+        <div class="header-inner">
+            <a href="#top" class="header-identity" aria-label="Siddharth Rout — home">
+                <img src="assets/images/headshot.jpg" alt="" class="avatar-img" aria-hidden="true">
+                <span class="identity-text">
+                    <span class="identity-name">Siddharth Rout</span>
+                    <span class="identity-subtitle">math + cs, columbia</span>
+                </span>
+            </a>
+
+            <nav class="header-icons" aria-label="Social links">
+                <a href="https://www.linkedin.com/in/siddharth-rout-69a0191b9/" target="_blank" rel="noopener noreferrer" class="header-icon" aria-label="LinkedIn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+                <a href="https://github.com/routsiddharth" target="_blank" rel="noopener noreferrer" class="header-icon" aria-label="GitHub">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+                <a href="https://medium.com/@routsiddharth2911" target="_blank" rel="noopener noreferrer" class="header-icon" aria-label="Medium">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
+                </a>
+                <a href="https://x.com/sidr29" target="_blank" rel="noopener noreferrer" class="header-icon" aria-label="X / Twitter">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="mailto:siddharth.rout@columbia.edu" class="header-icon" aria-label="Email">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </a>
+            </nav>
+
+            <a id="spotify-link" class="spotify-card" href="https://open.spotify.com/user/routsiddharth2911" target="_blank" rel="noopener noreferrer" aria-label="Last played on Spotify" data-state="loading">
+                <span class="spotify-art-wrap" aria-hidden="true">
+                    <img id="spotify-album-art" class="spotify-art" src="" alt="">
+                </span>
+                <span class="spotify-meta">
+                    <span class="spotify-label">Last played</span>
+                    <span id="spotify-track" class="spotify-track">Spotify</span>
+                    <span id="spotify-artist" class="spotify-artist"></span>
+                </span>
+                <svg class="spotify-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.78-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            </a>
+        </div>
+    </header>
+
+    <main id="top" class="site-main">
+
+        <!-- ABOUT -->
+        <section class="section section-grid" id="about">
+            <p class="section-label">About</p>
+            <div class="section-content">
+                <p class="about-para">I study math and CS at Columbia. Right now I'm running partnerships at <a href="https://www.instagram.com/coreatcu/" target="_blank" rel="noopener noreferrer">CORE</a> (Columbia's entrepreneurship community) and building <a href="https://www.columbiasoftwaresolutions.com/" target="_blank" rel="noopener noreferrer">Columbia Software Solutions</a> on the side. This summer I'm at <a href="https://innefu.com/" target="_blank" rel="noopener noreferrer">Innefu Labs</a> building real-time inference pipelines. Before that I was the first engineering hire at a General Catalyst-backed fintech in NYC (in stealth) working on browser agents for asset managers, and last summer I did quant infra at <a href="https://rayscapital.com" target="_blank" rel="noopener noreferrer">RAYS Capital</a> in Hong Kong.</p>
+                <p class="about-para">I do competitions whenever I can: Putnam, hackathons, IMC Prosperity, Bridgewater × Metaculus. I also write a <a href="https://medium.com/@routsiddharth2911" target="_blank" rel="noopener noreferrer">blog</a> about fun math/finance/markets/tech stuff, very broad. When I'm not working you'll probably find me in the gym or playing tennis/squash/badminton/any racket sport really.</p>
+            </div>
+        </section>
+
+        <!-- CURRENTLY -->
+        <section class="section section-grid" id="currently">
+            <p class="section-label">Currently</p>
+            <div class="section-content">
+                <dl class="currently-list">
+                    <div class="currently-row">
+                        <dt class="currently-label">Incoming</dt>
+                        <dd class="currently-value">
+                            <a href="https://innefu.com/" target="_blank" rel="noopener noreferrer" class="currently-title">SWE @ Innefu Labs</a>
+                            <span class="currently-desc">Real-time inference pipelines for AI and cybersecurity platforms used by government and enterprise clients across Asia and the Middle East.</span>
+                        </dd>
                     </div>
-                    <div class="profile-info">
-                        <h1 class="profile-name">Siddharth Rout</h1>
-                        <div class="profile-location">
-                            <span class="location-emoji">📍</span>
-                            <span class="location-text">Math + CS @ Columbia</span>
+                    <div class="currently-row">
+                        <dt class="currently-label">VP Partnerships</dt>
+                        <dd class="currently-value">
+                            <a href="https://www.instagram.com/coreatcu/" target="_blank" rel="noopener noreferrer" class="currently-title">CORE</a>
+                            <span class="currently-desc">Columbia's largest entrepreneurship organisation — sourcing speakers, sponsors, and partner companies across the NYC ecosystem.</span>
+                            <span class="currently-cta">If you're doing cool things in the startup space and interested in partnering with us, reach out at <a href="mailto:coreboard@columbia.edu">coreboard@columbia.edu</a>.</span>
+                        </dd>
+                    </div>
+                    <div class="currently-row">
+                        <dt class="currently-label">Founding Team</dt>
+                        <dd class="currently-value">
+                            <a href="https://www.columbiasoftwaresolutions.com/" target="_blank" rel="noopener noreferrer" class="currently-title">Columbia Software Solutions</a>
+                            <span class="currently-desc">Building free production software for NYC nonprofits, small businesses, and early-stage startups. 5+ client engagements per semester.</span>
+                            <span class="currently-cta">If you're an NYC-based nonprofit/small business/literally anyone that needs something built (for free) reach out at <a href="mailto:siddharth.rout@columbia.edu">siddharth.rout@columbia.edu</a>.</span>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section class="section section-grid" id="experience" hidden>
+            <p class="section-label">Experience</p>
+            <div class="section-content">
+                <div class="experience-list" data-expanded="false">
+
+                    <article class="experience-entry">
+                        <div class="experience-row">
+                            <div class="experience-primary">
+                                <h3 class="experience-company">Stealth Startup</h3>
+                                <p class="experience-role">First Engineering Hire, Browser Agents/Orchestration</p>
+                            </div>
+                            <div class="experience-meta">
+                                <span class="experience-date">2026</span>
+                                <span class="experience-location">New York</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="experience-entry">
+                        <div class="experience-row">
+                            <div class="experience-primary">
+                                <h3 class="experience-company">RAYS Capital</h3>
+                                <p class="experience-role">Quantitative Systems Engineering Intern, Trading Systems</p>
+                            </div>
+                            <div class="experience-meta">
+                                <span class="experience-date">2026</span>
+                                <span class="experience-location">Hong Kong</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="experience-entry">
+                        <div class="experience-row">
+                            <div class="experience-primary">
+                                <h3 class="experience-company">Columbia University</h3>
+                                <p class="experience-role">Applied ML Research, Prof. Nakul Verma</p>
+                            </div>
+                            <div class="experience-meta">
+                                <span class="experience-date">2025 — 26</span>
+                                <span class="experience-location">New York</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="experience-hidden" id="experience-hidden" data-collapsed="true" aria-hidden="true">
+                        <div class="experience-hidden-inner">
+
+                            <article class="experience-entry">
+                                <div class="experience-row">
+                                    <div class="experience-primary">
+                                        <h3 class="experience-company">Gulf Intel</h3>
+                                        <p class="experience-role">Co-founder, Custom Software for Middle Eastern SMEs</p>
+                                    </div>
+                                    <div class="experience-meta">
+                                        <span class="experience-date">2024 — 25</span>
+                                        <span class="experience-location">Bahrain</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="experience-entry">
+                                <div class="experience-row">
+                                    <div class="experience-primary">
+                                        <h3 class="experience-company">STC Bahrain</h3>
+                                        <p class="experience-role">Software Engineer Intern, Multilingual Transcription/Translation</p>
+                                    </div>
+                                    <div class="experience-meta">
+                                        <span class="experience-date">2024</span>
+                                        <span class="experience-location">Bahrain</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="experience-entry">
+                                <div class="experience-row">
+                                    <div class="experience-primary">
+                                        <h3 class="experience-company">Oxford University</h3>
+                                        <p class="experience-role">SFUDA Research Assistant, Dr. Pramit Saha</p>
+                                    </div>
+                                    <div class="experience-meta">
+                                        <span class="experience-date">2023 — 24</span>
+                                        <span class="experience-location">Oxford</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="experience-entry">
+                                <div class="experience-row">
+                                    <div class="experience-primary">
+                                        <h3 class="experience-company">CSM Technologies</h3>
+                                        <p class="experience-role">Machine Learning Intern, Recruitment Automation</p>
+                                    </div>
+                                    <div class="experience-meta">
+                                        <span class="experience-date">2023</span>
+                                        <span class="experience-location">India</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="experience-entry">
+                                <div class="experience-row">
+                                    <div class="experience-primary">
+                                        <h3 class="experience-company">Discovera</h3>
+                                        <p class="experience-role">Founder, Making Small Businesses Visible</p>
+                                    </div>
+                                    <div class="experience-meta">
+                                        <span class="experience-date">2021 — 22</span>
+                                        <span class="experience-location">India</span>
+                                    </div>
+                                </div>
+                            </article>
+
                         </div>
                     </div>
                 </div>
-                <div class="social-buttons">
-                <a href="https://www.linkedin.com/in/siddharth-rout-69a0191b9/" target="_blank" rel="noopener noreferrer" class="social-button" aria-label="LinkedIn">
-                    <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/routsiddharth" target="_blank" rel="noopener noreferrer" class="social-button" aria-label="GitHub">
-                    <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://medium.com/@routsiddharth2911" target="_blank" rel="noopener noreferrer" class="social-button" aria-label="Medium">
-                    <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-                    </svg>
-                </a>
-                <a href="https://x.com/sidr29" target="_blank" rel="noopener noreferrer" class="social-button" aria-label="X">
-                    <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                    </svg>
-                </a>
-                <a href="mailto:siddharth.rout@columbia.edu" class="social-button" aria-label="Email">
-                    <svg class="social-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                </a>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="6 9 12 15 18 9"></polyline>
-            </svg>
-        </div>
-    </div>
 
-    <section class="experience-section">
-        <div class="experience-container">
-            <p class="section-label">experience</p>
-            <div class="experience-list">
-                <div class="experience-row">
-                    <div class="experience-left">
-                        <span class="experience-company">Stealth</span>
-                        <span class="experience-role">Full Stack Engineering Intern</span>
-                    </div>
-                    <span class="experience-date">2026</span>
-                </div>
-                <div class="experience-row">
-                    <div class="experience-left">
-                        <span class="experience-company">RAYS Capital</span>
-                        <span class="experience-role">Quantitative Systems Engineer Intern</span>
-                    </div>
-                    <span class="experience-date">2026</span>
-                </div>
-                <div class="experience-row">
-                    <div class="experience-left">
-                        <span class="experience-company">Columbia CS Department</span>
-                        <span class="experience-role">Applied ML Research (Prof. Nakul Verma)</span>
-                    </div>
-                    <span class="experience-date">2025 – 2026</span>
-                </div>
-                <div class="experience-row">
-                    <div class="experience-left">
-                        <span class="experience-company">STC</span>
-                        <span class="experience-role">Software Engineer Intern</span>
-                    </div>
-                    <span class="experience-date">2024</span>
-                </div>
-                <div class="experience-row">
-                    <div class="experience-left">
-                        <span class="experience-company">Gulf Intel</span>
-                        <span class="experience-role">Co-founder</span>
-                    </div>
-                    <span class="experience-date">2024 – 2025</span>
-                </div>
-                <div class="experience-row">
-                    <div class="experience-left">
-                        <span class="experience-company">Oxford University</span>
-                        <span class="experience-role">SFUDA Research (Dr. Pramit Saha)</span>
-                    </div>
-                    <span class="experience-date">2023 – 2024</span>
-                </div>
-                <div class="experience-row">
-                    <div class="experience-left">
-                        <span class="experience-company">CSM Technologies</span>
-                        <span class="experience-role">Machine Learning Intern</span>
-                    </div>
-                    <span class="experience-date">2023</span>
-                </div>
-                <div class="experience-row">
-                    <div class="experience-left">
-                        <span class="experience-company">Discovera</span>
-                        <span class="experience-role">Founder</span>
-                    </div>
-                    <span class="experience-date">2021 – 2022</span>
-                </div>
+                <button class="experience-toggle" type="button" aria-expanded="false" aria-controls="experience-hidden">
+                    <span class="experience-toggle-text">Show 5 more</span>
+                    <svg class="experience-toggle-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="experience-section">
-        <div class="experience-container">
-            <p class="section-label">projects</p>
-            <div class="experience-list">
-                <a href="https://apps.apple.com/us/app/govo-discover-your-taste/id6749336381" target="_blank" rel="noopener noreferrer" class="project-row">
-                    <div class="project-left">
-                        <span class="experience-company">Govo</span>
-                        <span class="experience-role">ML-powered personalized food discovery engine.</span>
-                    </div>
-                    <div class="project-link">
-                        <span class="project-link-text">App Store</span>
-                        <svg class="project-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </div>
-                </a>
-                <a href="https://github.com/Archdiner/vero" target="_blank" rel="noopener noreferrer" class="project-row">
-                    <div class="project-left">
-                        <span class="experience-company">Roomio</span>
-                        <span class="experience-role">Swipe-based roommate matching app for university students.</span>
-                    </div>
-                    <div class="project-link">
-                        <span class="project-link-text">GitHub</span>
-                        <svg class="project-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <line x1="7" y1="17" x2="17" y2="7"></line>
-                            <polyline points="7 7 17 7 17 17"></polyline>
-                        </svg>
-                    </div>
-                </a>
+        <!-- SELECTED WORK -->
+        <section class="section section-grid" id="work" hidden>
+            <p class="section-label">Selected work</p>
+            <div class="section-content">
+                <p class="section-sub">Things I've shipped or am shipping</p>
             </div>
-        </div>
-    </section>
+            <div class="work-grid">
+
+                <a class="work-card" href="#" rel="noopener noreferrer">
+                    <div class="work-preview" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 7v5l3 3"/></svg>
+                    </div>
+                    <h3 class="work-title">Prosperity 4</h3>
+                    <p class="work-desc">Monte Carlo pricers for exotic derivatives and the bidding strategy that landed top 2%.</p>
+                </a>
+
+                <a class="work-card" href="https://www.unionsquarebanking.com" target="_blank" rel="noopener noreferrer">
+                    <div class="work-preview" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 4a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-6z"/><path d="M3 14a1 1 0 0 1 1 -1h16a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-16a1 1 0 0 1 -1 -1v-6z"/><path d="M7 7l0 .01"/><path d="M7 17l0 .01"/></svg>
+                    </div>
+                    <h3 class="work-title">Browser orchestration</h3>
+                    <p class="work-desc">Shipping reliable multi-step browser automation at production scale.</p>
+                </a>
+
+                <a class="work-card" href="https://apps.apple.com/us/app/govo-discover-your-taste/id6749336381" target="_blank" rel="noopener noreferrer">
+                    <div class="work-preview" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 21l-1 -1l-1 -1l-1 -1l-1 -1l-1 -1l-1 -1l-1 -1l-1 -1l-.5 -.5l-.5 -.5"/><path d="M3.5 14.5l8.5 -8.5l8.5 8.5"/><path d="M19 21l1 -1l1 -1l-9 -9l-9 9l1 1l1 1"/></svg>
+                    </div>
+                    <h3 class="work-title">Govo</h3>
+                    <p class="work-desc">Food recommendation engine with a 2k+ waitlist before launch. Live on the App Store.</p>
+                </a>
+
+                <a class="work-card" href="#" rel="noopener noreferrer">
+                    <div class="work-preview" aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 3l-4 7l4 7"/><path d="M15 3l4 7l-4 7"/></svg>
+                    </div>
+                    <h3 class="work-title">SFUDA at Oxford</h3>
+                    <p class="work-desc">Source-free unsupervised domain adaptation, supervised by Dr. Pramit Saha.</p>
+                </a>
+
+            </div>
+        </section>
+
+        <!-- WRITING -->
+        <section class="section writing-section" id="writing" hidden>
+            <p class="section-label">Writing</p>
+
+            <article class="writing-featured">
+                <a href="#" class="writing-link">
+                    <p class="writing-kicker">MAY 2026 · ESSAY</p>
+                    <h3 class="writing-title-lg">The H-1B is a startup tax on international students</h3>
+                    <p class="writing-excerpt">Why visa policy quietly funnels the most ambitious international students out of early-stage companies and into BigCo — and what to do about it.</p>
+                </a>
+            </article>
+
+            <div class="writing-secondary">
+                <article class="writing-entry">
+                    <a href="#" class="writing-link">
+                        <p class="writing-kicker">APR 2026 · NOTES</p>
+                        <h3 class="writing-title-sm">Notes from Prosperity 4</h3>
+                        <p class="writing-excerpt-sm">Delta-hedging, IV smile fitting, and what competition scoring rules teach you about real markets.</p>
+                    </a>
+                </article>
+                <article class="writing-entry">
+                    <a href="#" class="writing-link">
+                        <p class="writing-kicker">FEB 2026 · SHORT</p>
+                        <h3 class="writing-title-sm">Why I left consumer for fintech</h3>
+                        <p class="writing-excerpt-sm">A note on the tradeoffs of B2C versus B2B as a student founder.</p>
+                    </a>
+                </article>
+                <article class="writing-entry">
+                    <a href="#" class="writing-link">
+                        <p class="writing-kicker">JAN 2026 · NOTES</p>
+                        <h3 class="writing-title-sm">Conditional expectation, intuitively</h3>
+                        <p class="writing-excerpt-sm">Working through Blitzstein chapter 9 and the tower property finally clicking.</p>
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <!-- OFF HOURS -->
+        <section class="section section-grid" id="off-hours" hidden>
+            <div class="off-hours-label">
+                <p class="section-label">Off hours</p>
+                <p class="off-hours-sub">Things that have nothing to do with hiring me.</p>
+            </div>
+            <div class="section-content">
+                <ol class="off-hours-grid">
+                    <li class="off-hours-item">
+                        <span class="off-hours-num">01</span>
+                        <p class="off-hours-text">Walked in a fashion show in Bahrain. Not a metaphor.</p>
+                    </li>
+                    <li class="off-hours-item">
+                        <span class="off-hours-num">02</span>
+                        <p class="off-hours-text">Lived in five countries before turning twenty.</p>
+                    </li>
+                    <li class="off-hours-item">
+                        <span class="off-hours-num">03</span>
+                        <p class="off-hours-text">Captained the Bahrain Bourse trading team in high school. Lost gracefully.</p>
+                    </li>
+                    <li class="off-hours-item">
+                        <span class="off-hours-num">04</span>
+                        <p class="off-hours-text">Convinced Mac Miller's <em>Swimming</em> is the best rap album of the decade. Will argue.</p>
+                    </li>
+                    <li class="off-hours-item">
+                        <span class="off-hours-num">05</span>
+                        <p class="off-hours-text">Currently learning to make a proper sourdough. Currently failing.</p>
+                    </li>
+                    <li class="off-hours-item">
+                        <span class="off-hours-num">06</span>
+                        <p class="off-hours-text">Once got pulled aside at JFK for too many SIM cards.</p>
+                    </li>
+                    <li class="off-hours-item">
+                        <span class="off-hours-num">07</span>
+                        <p class="off-hours-text">Six gold medals at UKMT. Useful at parties zero times.</p>
+                    </li>
+                    <li class="off-hours-item off-hours-item--live">
+                        <span class="off-hours-num">
+                            <span class="num-live">08</span>
+                            <span class="live-dot" aria-hidden="true"></span>
+                        </span>
+                        <div class="off-hours-text-wrap">
+                            <p class="off-hours-text">Reading <em>The Man Who Solved the Market</em> by Gregory Zuckerman.</p>
+                            <p class="off-hours-sublive">Updates when I finish a book · changed 3 days ago</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- REACH OUT -->
+        <section class="section section-grid reach-section" id="reach">
+            <p class="section-label">Reach out</p>
+            <div class="section-content reach-content">
+                <div class="reach-left">
+                    <h2 class="reach-headline">If the work above looks interesting, I'd love to hear from you. The fastest way to reach me is <a href="mailto:siddharth.rout@columbia.edu">email</a>.</h2>
+                </div>
+                <nav class="reach-right" aria-label="Elsewhere">
+                    <p class="reach-elsewhere-label">Elsewhere</p>
+                    <ul class="reach-links">
+                        <li><a href="https://www.linkedin.com/in/siddharth-rout-69a0191b9/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">→</span></a></li>
+                        <li><a href="https://github.com/routsiddharth" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">→</span></a></li>
+                        <li><a href="https://x.com/sidr29" target="_blank" rel="noopener noreferrer">X / Twitter <span aria-hidden="true">→</span></a></li>
+                        <li><a href="https://medium.com/@routsiddharth2911" target="_blank" rel="noopener noreferrer">Medium <span aria-hidden="true">→</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <footer class="site-footer">
+            <span>sidrout.com · new york</span>
+            <span>last updated may 2026</span>
+        </footer>
+
+    </main>
 
     <script src="assets/js/script.js"></script>
 </body>
