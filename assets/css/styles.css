@@ -172,7 +172,8 @@ button { font: inherit; cursor: pointer; }
 .spotify-meta {
     display: flex;
     flex-direction: column;
-    line-height: 1.2;
+    justify-content: space-between;
+    height: 38px;
     min-width: 0;
 }
 
@@ -183,30 +184,30 @@ button { font: inherit; cursor: pointer; }
     letter-spacing: 0.6px;
     text-transform: uppercase;
     line-height: 1.1;
-    margin-bottom: 1px;
+    text-align: right;
+    flex-shrink: 0;
 }
 
 .spotify-track {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--text-primary);
-    line-height: 1.2;
+    line-height: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 200px;
+    max-width: 240px;
     padding-right: 4px;
 }
 
 .spotify-artist {
-    font-size: 10px;
+    font-size: 13px;
     color: var(--text-faint);
-    line-height: 1.2;
-    margin-top: 1px;
+    line-height: 1;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 200px;
+    max-width: 240px;
     padding-right: 4px;
 }
 
@@ -851,6 +852,7 @@ a.currently-title:hover {
     .spotify-card { padding: 4px; gap: 6px; }
     .spotify-art-wrap { width: 34px; height: 34px; }
     .spotify-meta { display: none; }
+    .spotify-label { display: none; }
 
     /* spine collapses to single column */
     .section-grid {
