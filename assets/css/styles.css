@@ -687,7 +687,7 @@ a.currently-title:hover {
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 32px;
-    align-items: baseline;
+    align-items: flex-start;
 }
 
 .reach-left { flex: 1 1 420px; min-width: 0; }
