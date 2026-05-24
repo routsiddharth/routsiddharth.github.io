@@ -19,6 +19,16 @@
     });
 })();
 
+// F1 races since Bahrain GP 2016 (the first one I watched).
+// Estimates ~22 races/year so the count creeps up on its own.
+(function () {
+    const el = document.getElementById('f1-count');
+    if (!el) return;
+    const bahrain2016 = new Date('2016-04-03T00:00:00Z');
+    const yearsElapsed = (Date.now() - bahrain2016.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
+    el.textContent = Math.round(yearsElapsed * 22);
+})();
+
 // Spotify last-played — fetched via Cloudflare Worker proxy.
 // On failure (e.g. CORS off-origin during local dev), the pill stays as
 // its fallback state showing just the green Spotify icon.
