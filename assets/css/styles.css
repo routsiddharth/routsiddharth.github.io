@@ -135,11 +135,11 @@ button { font: inherit; cursor: pointer; }
 .spotify-card {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
     background: transparent;
     border: none;
     border-radius: 999px;
-    padding: 4px 14px 4px 4px;
+    padding: 4px 18px 4px 4px;
     flex-shrink: 0;
     min-width: 0;
 }
@@ -194,7 +194,8 @@ button { font: inherit; cursor: pointer; }
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 160px;
+    max-width: 200px;
+    padding-right: 4px;
 }
 
 .spotify-artist {
@@ -205,7 +206,8 @@ button { font: inherit; cursor: pointer; }
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 160px;
+    max-width: 200px;
+    padding-right: 4px;
 }
 
 .spotify-artist:empty { display: none; }
