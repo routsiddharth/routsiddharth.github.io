@@ -916,6 +916,9 @@ a.currently-title:hover {
 
     .reach-section { padding-top: 40px; }
     .reach-content { flex-direction: column; align-items: flex-start; gap: 24px; }
+    /* In a column flex, flex-basis becomes height — 420px would force a
+       huge gap below the short headline. Reset to content height + full width. */
+    .reach-left { flex: 0 0 auto; width: 100%; }
     .reach-headline { font-size: 22px; line-height: 1.3; }
     .reach-right { min-width: 0; }
 
