@@ -414,7 +414,15 @@
                 <dl class="stats-list">
                     <div class="stat-row">
                         <dt class="stat-label">Countries visited</dt>
-                        <dd class="stat-value">23 <span class="stat-meta">(lived in 4)</span></dd>
+                        <dd class="stat-value">23 <span class="stat-meta">(lived in 4)</span>
+                            <button type="button" class="map-trigger" aria-label="View visited cities on a map" aria-haspopup="dialog" aria-controls="map-dialog">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path d="M2 12h20"></path>
+                                    <path d="M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20z"></path>
+                                </svg>
+                            </button>
+                        </dd>
                     </div>
                     <div class="stat-row">
                         <dt class="stat-label">Fashion shows walked</dt>
@@ -470,6 +478,23 @@
         </footer>
 
     </main>
+
+    <!-- Visited-cities world map -->
+    <dialog id="map-dialog" class="map-dialog" aria-label="Cities I've visited">
+        <div class="map-dialog-inner">
+            <button class="map-dialog-close" type="button" aria-label="Close map">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M18 6 6 18"></path>
+                    <path d="m6 6 12 12"></path>
+                </svg>
+            </button>
+            <svg class="world-map" viewBox="0 0 2000 1000" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map showing visited cities as white dots">
+                <g class="map-graticule"></g>
+                <g class="map-land"></g>
+                <g class="visited-dots"></g>
+            </svg>
+        </div>
+    </dialog>
 
     <script src="assets/js/script.js"></script>
 </body>
