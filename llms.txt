@@ -1,0 +1,17 @@
+# Siddharth Rout
+
+> Maths and CS student at Columbia University in New York, building software and trading systems. Runs partnerships at CORE, on the founding team of Columbia Software Solutions, incoming SWE at Innefu Labs.
+
+## About
+- [About](https://sidrout.com/#about): What Siddharth is working on now — partnerships at CORE (Columbia's largest entrepreneurship community), building Columbia Software Solutions (free software for NYC), and an incoming engineering role at Innefu Labs.
+
+## Work
+- [Selected work](https://sidrout.com/#work): Projects and competitions — IMC Prosperity 4 (algorithmic trading, top 2%), Bridgewater × Metaculus (forecasting, top 3%), Sundial (Columbia prediction market), Govo (food recommendation iOS app), and Roomio (roommate matching app).
+
+## Writing
+- [Medium](https://medium.com/@routsiddharth2911): Essays and notes.
+
+## Elsewhere
+- [GitHub](https://github.com/routsiddharth): Code and open-source projects.
+- [LinkedIn](https://www.linkedin.com/in/siddharth-rout-69a0191b9/): Professional background.
+- [X / Twitter](https://x.com/sidr29): Short-form posts.
