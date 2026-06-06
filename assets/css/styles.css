@@ -830,6 +830,14 @@ a.currently-title:hover {
     vector-effect: non-scaling-stroke;
 }
 
+.visited-country {
+    fill: #fff;
+    stroke: #fff;
+    stroke-width: 0.5;
+    stroke-linejoin: round;
+    vector-effect: non-scaling-stroke;
+}
+
 .visited-dot {
     fill: #fff;
     filter: drop-shadow(0 0 3px rgba(255, 255, 255, 0.65));
