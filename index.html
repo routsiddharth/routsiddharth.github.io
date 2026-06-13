@@ -381,14 +381,26 @@
     padding: 20px 0;
     border-top: 1px solid var(--hair);
   }
-  .xp-row:last-of-type { border-bottom: 1px solid var(--hair); }
+  .xp-row-last-visible { border-bottom: 1px solid var(--hair); transition: border-color 0.45s ease; }
+  .xp.open .xp-row-last-visible { border-bottom-color: transparent; }
   .xp-left { min-width: 0; }
   .xp-co { color: var(--ink); font-size: 16px; font-weight: 400; }
   .xp-role { color: var(--dim); font-size: 13.5px; margin-top: 3px; }
+  .xp-role-sep { color: var(--faint); }
+  .xp-role-sub { color: var(--dim); }
   .xp-meta { text-align: right; color: var(--faint); font-size: 12.5px; white-space: nowrap; }
   .xp-meta .xp-loc { display: block; color: var(--faint); }
-  .xp-hidden { display: none; }
-  .xp-hidden.open { display: grid; }
+
+  /* show-more wrapper — animates open/closed via grid-template-rows */
+  .xp-extra {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s cubic-bezier(0.2,0.6,0.2,1);
+  }
+  .xp.open .xp-extra { grid-template-rows: 1fr; }
+  .xp-extra-inner { overflow: hidden; opacity: 0; transition: opacity 0.45s ease; }
+  .xp.open .xp-extra-inner { opacity: 1; }
+  .xp-extra-inner .xp-row:last-child { border-bottom: 1px solid var(--hair); }
 
   .toggle {
     margin-top: 28px;
@@ -484,15 +496,30 @@
     grid-template-columns: 1fr auto;
     gap: 28px;
     align-items: baseline;
-    padding: 17px 0;
+    padding: 18px 0;
     border-top: 1px solid var(--hair);
+    transition: background-color 0.3s ease;
   }
   .stat-row:last-of-type { border-bottom: 1px solid var(--hair); }
   .stat-key { color: var(--dim); font-size: 14.5px; }
-  .stat-val { color: var(--ink); font-size: 14.5px; text-align: right; font-weight: 400; }
-  .stat-val .muted { color: var(--faint); font-weight: 300; }
-  .stat-val a { color: var(--accent); }
-  .stat-val a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .stat-val {
+    color: var(--ink);
+    font-family: "Newsreader", serif;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-align: right;
+  }
+  .stat-val .muted {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-size: 12px;
+    color: var(--faint);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+  }
+  .stat-val a { color: var(--accent); border-bottom: 1px solid rgba(95,174,126,0.28); transition: border-color 0.3s ease; }
+  .stat-val a:hover { border-color: var(--accent); }
   .stat-foot { color: var(--faint); font-size: 13px; font-style: italic; margin-top: 18px; font-family: "Newsreader", serif; }
 
   .map-trigger {
@@ -568,20 +595,63 @@
     .m-header {
       display: flex;
       flex-direction: column;
-      gap: 22px;
+      gap: 20px;
       padding: 44px 0 18px;
     }
     .m-top { display: flex; align-items: center; gap: 16px; }
     .m-header .name { font-size: 26px; }
     .m-header .tagline { max-width: none; }
-    .m-header .socials { gap: 18px; }
-    .m-header .nowplaying { width: fit-content; }
+
+    /* no social icons on mobile — reach-out section still has the links */
+    .m-header .socials { display: none; }
+
+    /* now playing: song name on its own line, no album art */
+    .nowplaying-m {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+      width: fit-content;
+    }
+    .np-track-m {
+      font-size: 14px;
+      color: var(--ink);
+      font-weight: 400;
+      max-width: 80vw;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
     .content { padding: 12px 0 0; }
     section:first-child { padding-top: 24px; }
     section { padding-bottom: 84px; }
     .dl-row { grid-template-columns: 1fr; gap: 8px; }
+
+    /* experience: top-align year/location with the title; role on two lines */
+    .xp-row { align-items: start; column-gap: 18px; }
+    .xp-co { line-height: 1.3; }
+    .xp-meta { padding-top: 1px; line-height: 1.45; }
+    .xp-role-sep { display: none; }
+    .xp-role-sub { display: block; }
+
+    /* selected work: title first, subtitle + year on the line below */
+    .work-summary {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "name plus"
+        "kind kind";
+      column-gap: 16px;
+      row-gap: 7px;
+      align-items: center;
+    }
+    .work-name { grid-area: name; font-size: 21px; }
+    .work-plus { grid-area: plus; }
+    .work-kind { grid-area: kind; text-align: left; align-self: start; }
+
+    /* stats: a touch smaller so long values don't wrap awkwardly */
     .stat-row { gap: 16px; }
-    .work-name { font-size: 21px; }
+    .stat-val { font-size: 18px; }
+
     .hero-lead { margin-bottom: 40px; }
     footer { flex-direction: column; gap: 8px; padding: 32px 0 48px; }
   }
@@ -591,6 +661,7 @@
     .reveal { opacity: 1 !important; transform: none !important; transition: none; }
     .eq span { animation: none; }
     .work-body { transition: none; }
+    .xp-extra, .xp-extra-inner { transition: none; }
   }
 
   /* ---------- map dialog ---------- */
@@ -699,8 +770,9 @@
           <p class="tagline">nineteen, nyc, maths + cs @ columbia</p>
         </div>
       </div>
-      <a id="spotify-link-m" class="nowplaying" href="https://open.spotify.com/user/routsiddharth2911" target="_blank" rel="noopener" aria-label="Last played on Spotify">
+      <a id="spotify-link-m" class="nowplaying nowplaying-m" href="https://open.spotify.com/user/routsiddharth2911" target="_blank" rel="noopener" aria-label="Last played on Spotify">
         <span class="np-label" style="margin:0;"><span class="label">Last played</span><span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span></span>
+        <span class="np-track-m" id="spotify-track-m">Feel No Ways</span>
       </a>
       <div class="socials" aria-label="Social links">
         <a href="https://www.linkedin.com/in/siddharth-rout-69a0191b9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7" y1="11" x2="7" y2="16.5"/><circle cx="7" cy="7.7" r="1" fill="currentColor" stroke="none"/><path d="M11 16.5v-5.5"/><path d="M11 13.7a2.4 2.4 0 0 1 4.8 0v2.8"/></svg></a>
@@ -760,44 +832,46 @@
     <!-- EXPERIENCE -->
     <section id="experience">
       <div class="sec-head reveal"><span class="sec-num">03</span><span class="sec-title">Experience</span><span class="sec-rule"></span></div>
-      <div class="xp reveal">
+      <div class="xp reveal" id="xp-list">
         <div class="xp-row">
-          <div class="xp-left"><div class="xp-co">Optipro AI</div><div class="xp-role">Software Engineer | Mobile App Agents</div></div>
+          <div class="xp-left"><div class="xp-co">Optipro AI</div><div class="xp-role">Software Engineer<span class="xp-role-sep"> | </span><span class="xp-role-sub">Mobile App Agents</span></div></div>
           <div class="xp-meta">2026<span class="xp-loc">Bengaluru</span></div>
         </div>
         <div class="xp-row">
-          <div class="xp-left"><div class="xp-co">Stealth Startup</div><div class="xp-role">First Engineering Hire | Browser Agents / Orchestration</div></div>
+          <div class="xp-left"><div class="xp-co">Stealth Startup</div><div class="xp-role">First Engineering Hire<span class="xp-role-sep"> | </span><span class="xp-role-sub">Browser Agents / Orchestration</span></div></div>
           <div class="xp-meta">2026<span class="xp-loc">New York</span></div>
         </div>
         <div class="xp-row">
-          <div class="xp-left"><div class="xp-co">RAYS Capital</div><div class="xp-role">Quantitative Systems Engineer | Trading Systems</div></div>
+          <div class="xp-left"><div class="xp-co">RAYS Capital</div><div class="xp-role">Quantitative Systems Engineer<span class="xp-role-sep"> | </span><span class="xp-role-sub">Trading Systems</span></div></div>
           <div class="xp-meta">2026<span class="xp-loc">Hong Kong</span></div>
         </div>
-        <div class="xp-row">
-          <div class="xp-left"><div class="xp-co">Columbia University</div><div class="xp-role">Applied ML Research | Prof. Nakul Verma</div></div>
+        <div class="xp-row xp-row-last-visible">
+          <div class="xp-left"><div class="xp-co">Columbia University</div><div class="xp-role">Applied ML Research<span class="xp-role-sep"> | </span><span class="xp-role-sub">Prof. Nakul Verma</span></div></div>
           <div class="xp-meta">2025–26<span class="xp-loc">New York</span></div>
         </div>
 
-        <div class="xp-row xp-hidden">
-          <div class="xp-left"><div class="xp-co">Gulf Intel</div><div class="xp-role">Co-founder | Custom Software for Middle Eastern SMEs</div></div>
-          <div class="xp-meta">2024–25<span class="xp-loc">Bahrain</span></div>
-        </div>
-        <div class="xp-row xp-hidden">
-          <div class="xp-left"><div class="xp-co">STC Bahrain</div><div class="xp-role">Software Engineer | Multilingual Transcription / Translation</div></div>
-          <div class="xp-meta">2024<span class="xp-loc">Bahrain</span></div>
-        </div>
-        <div class="xp-row xp-hidden">
-          <div class="xp-left"><div class="xp-co">Oxford University</div><div class="xp-role">SFUDA Research Assistant | Dr. Pramit Saha</div></div>
-          <div class="xp-meta">2023–24<span class="xp-loc">Oxford</span></div>
-        </div>
-        <div class="xp-row xp-hidden">
-          <div class="xp-left"><div class="xp-co">CSM Technologies</div><div class="xp-role">Machine Learning Engineer | Recruitment Automation</div></div>
-          <div class="xp-meta">2023<span class="xp-loc">India</span></div>
-        </div>
-        <div class="xp-row xp-hidden">
-          <div class="xp-left"><div class="xp-co">Discovera</div><div class="xp-role">Founder | Making SMEs Visible</div></div>
-          <div class="xp-meta">2021–22<span class="xp-loc">Bahrain</span></div>
-        </div>
+        <div class="xp-extra"><div class="xp-extra-inner">
+          <div class="xp-row">
+            <div class="xp-left"><div class="xp-co">Gulf Intel</div><div class="xp-role">Co-founder<span class="xp-role-sep"> | </span><span class="xp-role-sub">Custom Software for Middle Eastern SMEs</span></div></div>
+            <div class="xp-meta">2024–25<span class="xp-loc">Bahrain</span></div>
+          </div>
+          <div class="xp-row">
+            <div class="xp-left"><div class="xp-co">STC Bahrain</div><div class="xp-role">Software Engineer<span class="xp-role-sep"> | </span><span class="xp-role-sub">Multilingual Transcription / Translation</span></div></div>
+            <div class="xp-meta">2024<span class="xp-loc">Bahrain</span></div>
+          </div>
+          <div class="xp-row">
+            <div class="xp-left"><div class="xp-co">Oxford University</div><div class="xp-role">SFUDA Research Assistant<span class="xp-role-sep"> | </span><span class="xp-role-sub">Dr. Pramit Saha</span></div></div>
+            <div class="xp-meta">2023–24<span class="xp-loc">Oxford</span></div>
+          </div>
+          <div class="xp-row">
+            <div class="xp-left"><div class="xp-co">CSM Technologies</div><div class="xp-role">Machine Learning Engineer<span class="xp-role-sep"> | </span><span class="xp-role-sub">Recruitment Automation</span></div></div>
+            <div class="xp-meta">2023<span class="xp-loc">India</span></div>
+          </div>
+          <div class="xp-row">
+            <div class="xp-left"><div class="xp-co">Discovera</div><div class="xp-role">Founder<span class="xp-role-sep"> | </span><span class="xp-role-sub">Making SMEs Visible</span></div></div>
+            <div class="xp-meta">2021–22<span class="xp-loc">Bahrain</span></div>
+          </div>
+        </div></div>
       </div>
       <button class="toggle" id="xp-toggle" aria-expanded="false"><span class="tog-mark">+</span><span id="xp-toggle-text">Show 5 more</span></button>
     </section>
@@ -1016,13 +1090,13 @@
   (function () {
     var btn = document.getElementById('xp-toggle');
     var txt = document.getElementById('xp-toggle-text');
+    var list = document.getElementById('xp-list');
     var mark = btn ? btn.querySelector('.tog-mark') : null;
-    if (!btn) return;
-    var hidden = document.querySelectorAll('.xp-hidden');
+    if (!btn || !list) return;
     var open = false;
     btn.addEventListener('click', function () {
       open = !open;
-      hidden.forEach(function (r) { r.classList.toggle('open', open); });
+      list.classList.toggle('open', open);
       btn.setAttribute('aria-expanded', String(open));
       txt.textContent = open ? 'Show less' : 'Show 5 more';
       if (mark) mark.textContent = open ? '−' : '+';
@@ -1052,18 +1126,22 @@
 
   /* ---------- Spotify last-played ---------- */
   (function () {
-    var card = document.getElementById('spotify-link'); if (!card) return;
+    var card = document.getElementById('spotify-link');
+    var cardM = document.getElementById('spotify-link-m');
+    if (!card && !cardM) return;
     fetch('https://spotify-last-played.routsiddharth2911.workers.dev/last-played', { mode: 'cors' })
       .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
       .then(function (d) {
         if (!d || !d.name) return;
         var tr = document.getElementById('spotify-track'); if (tr) tr.textContent = d.name;
+        var trM = document.getElementById('spotify-track-m'); if (trM) trM.textContent = d.name;
         var ar = document.getElementById('spotify-artist'); if (ar) ar.textContent = d.artist || '';
         var art = document.getElementById('spotify-album-art'); if (art && d.albumArt) art.src = d.albumArt;
-        if (d.songUrl) card.href = d.songUrl;
-        card.dataset.state = 'ready';
+        if (d.songUrl) { if (card) card.href = d.songUrl; if (cardM) cardM.href = d.songUrl; }
+        if (card) card.dataset.state = 'ready';
+        if (cardM) cardM.dataset.state = 'ready';
       })
-      .catch(function () { card.dataset.state = 'error'; });
+      .catch(function () { if (card) card.dataset.state = 'error'; if (cardM) cardM.dataset.state = 'error'; });
   })();
 
   /* ---------- world map popup ---------- */
