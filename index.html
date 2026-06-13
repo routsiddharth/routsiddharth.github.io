@@ -1,587 +1,1095 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Siddharth Rout</title>
-    <meta name="description" content="Siddharth Rout is a maths and computer science student at Columbia University in New York, building software and trading systems. Partnerships at CORE; founding team at Columbia Software Solutions; SWE at Optipro AI.">
-    <meta name="author" content="Siddharth Rout">
-    <link rel="canonical" href="https://sidrout.com/">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Siddharth Rout</title>
+<meta name="description" content="Siddharth Rout is a maths and computer science student at Columbia University in New York, building software and trading systems. Partnerships at CORE; founding team at Columbia Software Solutions; SWE at Optipro AI." />
+<meta name="author" content="Siddharth Rout" />
+<link rel="canonical" href="https://sidrout.com/" />
 
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Siddharth Rout">
-    <meta property="og:title" content="Siddharth Rout — Maths + CS at Columbia">
-    <meta property="og:description" content="Maths and CS student at Columbia in New York, building software and trading systems. Partnerships at CORE; founding team at Columbia Software Solutions; SWE at Optipro AI.">
-    <meta property="og:url" content="https://sidrout.com/">
-    <meta property="og:image" content="https://sidrout.com/assets/images/headshot.jpg">
-    <meta property="og:image:width" content="400">
-    <meta property="og:image:height" content="400">
-    <meta property="og:image:alt" content="Siddharth Rout">
-    <meta property="og:locale" content="en_US">
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Siddharth Rout" />
+<meta property="og:title" content="Siddharth Rout — Maths + CS at Columbia" />
+<meta property="og:description" content="Maths and CS student at Columbia in New York, building software and trading systems. Partnerships at CORE; founding team at Columbia Software Solutions; SWE at Optipro AI." />
+<meta property="og:url" content="https://sidrout.com/" />
+<meta property="og:image" content="https://sidrout.com/assets/images/headshot.jpg" />
+<meta property="og:image:width" content="400" />
+<meta property="og:image:height" content="400" />
+<meta property="og:image:alt" content="Siddharth Rout" />
+<meta property="og:locale" content="en_US" />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@sidr29">
-    <meta name="twitter:creator" content="@sidr29">
-    <meta name="twitter:title" content="Siddharth Rout — Maths + CS at Columbia">
-    <meta name="twitter:description" content="Maths and CS student at Columbia in New York, building software and trading systems. Partnerships at CORE; founding team at Columbia Software Solutions; SWE at Optipro AI.">
-    <meta name="twitter:image" content="https://sidrout.com/assets/images/headshot.jpg">
-    <meta name="twitter:image:alt" content="Siddharth Rout">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@sidr29" />
+<meta name="twitter:creator" content="@sidr29" />
+<meta name="twitter:title" content="Siddharth Rout — Maths + CS at Columbia" />
+<meta name="twitter:description" content="Maths and CS student at Columbia in New York, building software and trading systems. Partnerships at CORE; founding team at Columbia Software Solutions; SWE at Optipro AI." />
+<meta name="twitter:image" content="https://sidrout.com/assets/images/headshot.jpg" />
+<meta name="twitter:image:alt" content="Siddharth Rout" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/styles.css">
+<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+<link rel="shortcut icon" href="favicon/favicon.ico" />
+<link rel="manifest" href="favicon/manifest.json" />
+<meta name="msapplication-TileColor" content="#0c0c0d" />
+<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png" />
+<meta name="msapplication-config" content="favicon/browserconfig.xml" />
+<meta name="theme-color" content="#0c0c0d" />
 
-    <link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="shortcut icon" href="favicon/favicon.ico">
-    <link rel="manifest" href="favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#0a0a0a">
-    <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
-    <meta name="msapplication-config" content="favicon/browserconfig.xml">
-    <meta name="theme-color" content="#0a0a0a">
-
-    <script type="application/ld+json">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://sidrout.com/#person",
-          "name": "Siddharth Rout",
-          "givenName": "Siddharth",
-          "familyName": "Rout",
-          "url": "https://sidrout.com/",
-          "image": "https://sidrout.com/assets/images/headshot.jpg",
-          "jobTitle": "Software Engineer",
-          "description": "Siddharth Rout is a mathematics and computer science student at Columbia University in New York who builds software and trading systems. He runs partnerships at CORE, is on the founding team of Columbia Software Solutions, and is a software engineer at Optipro AI.",
-          "email": "mailto:siddharth.rout@columbia.edu",
-          "homeLocation": {
-            "@type": "Place",
-            "name": "New York, United States"
-          },
-          "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "Columbia University",
-            "sameAs": "https://www.columbia.edu/"
-          },
-          "knowsAbout": [
-            "Software Engineering",
-            "Mathematics",
-            "Machine Learning",
-            "Quantitative Trading",
-            "Market Making"
-          ],
-          "sameAs": [
-            "https://github.com/routsiddharth",
-            "https://www.linkedin.com/in/siddharth-rout-69a0191b9/",
-            "https://medium.com/@routsiddharth2911",
-            "https://x.com/sidr29"
-          ]
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://sidrout.com/#website",
-          "url": "https://sidrout.com/",
-          "name": "Siddharth Rout",
-          "description": "Personal site of Siddharth Rout — maths and CS student at Columbia University, building software and trading systems.",
-          "inLanguage": "en-US",
-          "publisher": { "@id": "https://sidrout.com/#person" }
-        },
-        {
-          "@type": "ProfilePage",
-          "@id": "https://sidrout.com/#webpage",
-          "url": "https://sidrout.com/",
-          "name": "Siddharth Rout — Maths + CS at Columbia",
-          "isPartOf": { "@id": "https://sidrout.com/#website" },
-          "about": { "@id": "https://sidrout.com/#person" },
-          "mainEntity": { "@id": "https://sidrout.com/#person" },
-          "primaryImageOfPage": "https://sidrout.com/assets/images/headshot.jpg",
-          "inLanguage": "en-US"
-        }
+      "@type": "Person",
+      "@id": "https://sidrout.com/#person",
+      "name": "Siddharth Rout",
+      "givenName": "Siddharth",
+      "familyName": "Rout",
+      "url": "https://sidrout.com/",
+      "image": "https://sidrout.com/assets/images/headshot.jpg",
+      "jobTitle": "Software Engineer",
+      "description": "Siddharth Rout is a mathematics and computer science student at Columbia University in New York who builds software and trading systems. He runs partnerships at CORE, is on the founding team of Columbia Software Solutions, and is a software engineer at Optipro AI.",
+      "email": "mailto:siddharth.rout@columbia.edu",
+      "homeLocation": {
+        "@type": "Place",
+        "name": "New York, United States"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Columbia University",
+        "sameAs": "https://www.columbia.edu/"
+      },
+      "knowsAbout": [
+        "Software Engineering",
+        "Mathematics",
+        "Machine Learning",
+        "Quantitative Trading",
+        "Market Making"
+      ],
+      "sameAs": [
+        "https://github.com/routsiddharth",
+        "https://www.linkedin.com/in/siddharth-rout-69a0191b9/",
+        "https://medium.com/@routsiddharth2911",
+        "https://x.com/sidr29"
       ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sidrout.com/#website",
+      "url": "https://sidrout.com/",
+      "name": "Siddharth Rout",
+      "description": "Personal site of Siddharth Rout — maths and CS student at Columbia University, building software and trading systems.",
+      "inLanguage": "en-US",
+      "publisher": { "@id": "https://sidrout.com/#person" }
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://sidrout.com/#webpage",
+      "url": "https://sidrout.com/",
+      "name": "Siddharth Rout — Maths + CS at Columbia",
+      "isPartOf": { "@id": "https://sidrout.com/#website" },
+      "about": { "@id": "https://sidrout.com/#person" },
+      "mainEntity": { "@id": "https://sidrout.com/#person" },
+      "primaryImageOfPage": "https://sidrout.com/assets/images/headshot.jpg",
+      "inLanguage": "en-US"
     }
-    </script>
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #0c0c0d;
+    --bg-soft: #0d0e0f;
+    --dialog-bg: #0a0a0b;
+    --ink: #ece9e3;
+    --dim: #8a8a86;
+    --faint: #5b5b58;
+    --hair: rgba(255,255,255,0.08);
+    --hair-soft: rgba(255,255,255,0.05);
+    --accent: #5fae7e;
+    --land: #242427;
+    --maxw: 1180px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 0.01em;
+  }
+
+  ::selection { background: rgba(95,174,126,0.22); color: var(--ink); }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- shell layout: slim left rail + content ---------- */
+  .shell {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    gap: 90px;
+    align-items: start;
+  }
+
+  /* ---------- left meta rail ---------- */
+  .rail {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    padding: 64px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .rail-top { display: flex; flex-direction: column; gap: 28px; }
+
+  .headshot {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(0.25) brightness(0.96);
+    border: 1px solid var(--hair);
+  }
+
+  .name {
+    font-family: "Newsreader", serif;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+
+  .tagline {
+    color: var(--dim);
+    font-size: 13.5px;
+    line-height: 1.5;
+    max-width: 200px;
+  }
+
+  .label {
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  /* rail nav */
+  .rail-nav { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; }
+  .rail-nav a {
+    color: var(--dim);
+    font-size: 13px;
+    width: fit-content;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  .rail-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -2px;
+    width: 100%; height: 1px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.2,0.6,0.2,1);
+  }
+  .rail-nav a:hover { color: var(--ink); }
+  .rail-nav a:hover::after { transform: scaleX(1); }
+  /* current section (scrollspy) — same treatment as hover, persistent */
+  .rail-nav a.active { color: var(--ink); }
+  .rail-nav a.active::after { transform: scaleX(1); }
+
+  .rail-bottom { display: flex; flex-direction: column; gap: 26px; }
+
+  .socials { display: flex; gap: 16px; }
+  .socials a {
+    color: var(--faint);
+    line-height: 0;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  .socials a:hover { color: var(--ink); transform: translateY(-1px); }
+  .socials svg { width: 17px; height: 17px; display: block; }
+
+  /* now playing */
+  .nowplaying {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: var(--dim);
+    transition: color 0.3s ease;
+  }
+  .nowplaying:hover { color: var(--ink); }
+  .np-art {
+    position: relative;
+    width: 34px; height: 34px;
+    border-radius: 3px;
+    background: #18181a;
+    border: 1px solid var(--hair-soft);
+    flex-shrink: 0;
+    overflow: hidden;
+    display: block;
+  }
+  .np-art img {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  #spotify-link[data-state="ready"] .np-art img { opacity: 1; }
+  .np-meta { display: flex; flex-direction: column; min-width: 0; line-height: 1.35; }
+  .np-track {
+    font-size: 12.5px; color: var(--ink); font-weight: 400;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;
+  }
+  .np-artist {
+    font-size: 11px; color: var(--dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 150px;
+  }
+  .np-label { display: flex; align-items: center; gap: 7px; margin-bottom: 7px; }
+
+  /* tiny equalizer — bars share a baseline and scale up from the bottom */
+  .eq { display: inline-flex; align-items: flex-end; gap: 2px; height: 10px; }
+  .eq span {
+    width: 2px;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 1px;
+    transform-origin: bottom;
+    transform: scaleY(0.3);
+    animation: eq 1s ease-in-out infinite;
+  }
+  .eq span:nth-child(1){ animation-delay: -0.40s; }
+  .eq span:nth-child(2){ animation-delay: -0.15s; }
+  .eq span:nth-child(3){ animation-delay: -0.65s; }
+  .eq span:nth-child(4){ animation-delay: -0.30s; }
+  @keyframes eq { 0%,100%{ transform: scaleY(0.28); } 50%{ transform: scaleY(1); } }
+
+  /* ---------- content column ---------- */
+  .content { padding: 64px 0 0; min-width: 0; }
+
+  section { padding: 0 0 110px; }
+  section:first-child { padding-top: 36px; }
+
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    margin-bottom: 40px;
+    padding-bottom: 0;
+  }
+  .sec-num { font-size: 10.5px; letter-spacing: 0.22em; color: var(--faint); }
+  .sec-title {
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .sec-rule { flex: 1; height: 1px; background: var(--hair); }
+
+  /* hero / about */
+  .hero-lead {
+    font-family: "Newsreader", serif;
+    font-weight: 300;
+    font-size: clamp(28px, 3.6vw, 44px);
+    line-height: 1.28;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    max-width: 22ch;
+    margin: 0 0 56px;
+  }
+  .hero-lead .accent { color: var(--accent); }
+
+  .about {
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--dim);
+    max-width: none;
+  }
+  .about strong { font-weight: 400; color: var(--ink); }
+  .about a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--hair);
+    transition: border-color 0.3s ease;
+  }
+  .about a:hover { border-color: var(--accent); }
+
+  /* ---------- definition list (currently) ---------- */
+  .dl { display: flex; flex-direction: column; }
+  .dl-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 36px;
+    padding: 28px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .dl-row:last-child { border-bottom: 1px solid var(--hair); }
+  .dl-key { color: var(--faint); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; padding-top: 3px; }
+  .dl-val .dl-title { color: var(--ink); font-size: 16px; font-weight: 400; }
+  .dl-val .dl-title a { border-bottom: 1px solid var(--hair); transition: border-color 0.3s ease; }
+  .dl-val .dl-title a:hover { border-color: var(--accent); }
+  .dl-val .dl-desc { color: var(--dim); margin-top: 6px; max-width: none; }
+  .dl-cta {
+    margin-top: 12px;
+    color: var(--faint);
+    font-size: 13px;
+    line-height: 1.6;
+    max-width: none;
+  }
+  .dl-cta a { color: var(--accent); }
+  .dl-cta a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+  /* ---------- experience list ---------- */
+  .xp { display: flex; flex-direction: column; }
+  .xp-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .xp-row:last-of-type { border-bottom: 1px solid var(--hair); }
+  .xp-left { min-width: 0; }
+  .xp-co { color: var(--ink); font-size: 16px; font-weight: 400; }
+  .xp-role { color: var(--dim); font-size: 13.5px; margin-top: 3px; }
+  .xp-meta { text-align: right; color: var(--faint); font-size: 12.5px; white-space: nowrap; }
+  .xp-meta .xp-loc { display: block; color: var(--faint); }
+  .xp-hidden { display: none; }
+  .xp-hidden.open { display: grid; }
+
+  .toggle {
+    margin-top: 28px;
+    background: none;
+    border: none;
+    color: var(--dim);
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    transition: color 0.3s ease;
+  }
+  .toggle:hover { color: var(--ink); }
+  .toggle .tog-mark { color: var(--accent); font-size: 14px; line-height: 1; }
+
+  /* ---------- selected work (expandable rows) ---------- */
+  .work { display: flex; flex-direction: column; }
+  .work-item { border-top: 1px solid var(--hair); }
+  .work-item:last-child { border-bottom: 1px solid var(--hair); }
+  .work-summary {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: 24px;
+    align-items: baseline;
+    padding: 26px 0;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    color: inherit;
+  }
+  .work-name {
+    font-family: "Newsreader", serif;
+    font-weight: 300;
+    font-size: 24px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    transition: color 0.3s ease;
+  }
+  .work-item:hover .work-name { color: #fff; }
+  .work-kind { color: var(--dim); font-size: 12.5px; letter-spacing: 0.04em; align-self: center; }
+  .work-plus {
+    color: var(--faint);
+    font-size: 18px;
+    line-height: 1;
+    align-self: center;
+    transition: transform 0.4s cubic-bezier(0.2,0.6,0.2,1), color 0.3s ease;
+  }
+  .work-item.open .work-plus { transform: rotate(45deg); color: var(--accent); }
+
+  .work-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.45s cubic-bezier(0.2,0.6,0.2,1);
+  }
+  .work-item.open .work-body { grid-template-rows: 1fr; }
+  .work-body-inner { overflow: hidden; }
+  .work-desc {
+    color: var(--dim);
+    max-width: none;
+    padding-bottom: 8px;
+    line-height: 1.8;
+  }
+  .work-foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    padding: 14px 0 30px;
+    align-items: baseline;
+  }
+  .work-result { color: var(--accent); font-size: 13px; }
+  .work-stack { color: var(--faint); font-size: 12.5px; letter-spacing: 0.03em; }
+  .work-link {
+    color: var(--ink);
+    font-size: 12.5px;
+    border-bottom: 1px solid var(--hair);
+    padding-bottom: 1px;
+    transition: border-color 0.3s ease;
+  }
+  .work-link:hover { border-color: var(--accent); }
+
+  /* ---------- personal stats ---------- */
+  .stats { display: flex; flex-direction: column; }
+  .stat-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
+    align-items: baseline;
+    padding: 17px 0;
+    border-top: 1px solid var(--hair);
+  }
+  .stat-row:last-of-type { border-bottom: 1px solid var(--hair); }
+  .stat-key { color: var(--dim); font-size: 14.5px; }
+  .stat-val { color: var(--ink); font-size: 14.5px; text-align: right; font-weight: 400; }
+  .stat-val .muted { color: var(--faint); font-weight: 300; }
+  .stat-val a { color: var(--accent); }
+  .stat-val a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .stat-foot { color: var(--faint); font-size: 13px; font-style: italic; margin-top: 18px; font-family: "Newsreader", serif; }
+
+  .map-trigger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 8px;
+    cursor: pointer;
+    color: var(--faint);
+    vertical-align: middle;
+    line-height: 0;
+    transition: color 0.3s ease;
+  }
+  .map-trigger:hover { color: var(--accent); }
+  .map-trigger svg { width: 14px; height: 14px; display: inline-block; }
+
+  /* ---------- reach out ---------- */
+  .reach-lead {
+    font-family: "Newsreader", serif;
+    font-weight: 300;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.4;
+    color: var(--ink);
+    max-width: none;
+    letter-spacing: -0.01em;
+  }
+  .reach-lead a { color: var(--accent); white-space: nowrap; }
+  .reach-lead a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .reach-elsewhere { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 28px; }
+  .reach-elsewhere a {
+    color: var(--dim);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  .reach-elsewhere a:hover { color: var(--ink); }
+  .reach-elsewhere a::after {
+    content: ""; position: absolute; left: 0; bottom: -3px; width: 100%; height: 1px;
+    background: var(--accent); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.35s cubic-bezier(0.2,0.6,0.2,1);
+  }
+  .reach-elsewhere a:hover::after { transform: scaleX(1); }
+
+  /* ---------- footer ---------- */
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 38px 0 56px;
+    border-top: 1px solid var(--hair);
+    color: var(--faint);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ---------- reveal motion ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.9s cubic-bezier(0.2,0.6,0.2,1), transform 0.9s cubic-bezier(0.2,0.6,0.2,1);
+    will-change: opacity, transform;
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ---------- mobile header (hidden on desktop) ---------- */
+  .m-header { display: none; }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 900px) {
+    .shell { grid-template-columns: 1fr; gap: 0; padding: 0 26px; }
+    .rail { display: none; }
+    .m-header {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      padding: 44px 0 18px;
+    }
+    .m-top { display: flex; align-items: center; gap: 16px; }
+    .m-header .name { font-size: 26px; }
+    .m-header .tagline { max-width: none; }
+    .m-header .socials { gap: 18px; }
+    .m-header .nowplaying { width: fit-content; }
+    .content { padding: 12px 0 0; }
+    section:first-child { padding-top: 24px; }
+    section { padding-bottom: 84px; }
+    .dl-row { grid-template-columns: 1fr; gap: 8px; }
+    .stat-row { gap: 16px; }
+    .work-name { font-size: 21px; }
+    .hero-lead { margin-bottom: 40px; }
+    footer { flex-direction: column; gap: 8px; padding: 32px 0 48px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto; }
+    .reveal { opacity: 1 !important; transform: none !important; transition: none; }
+    .eq span { animation: none; }
+    .work-body { transition: none; }
+  }
+
+  /* ---------- map dialog ---------- */
+  .map-dialog {
+    padding: 0;
+    border: 1px solid var(--hair);
+    border-radius: 6px;
+    background: var(--dialog-bg);
+    width: min(92vw, 1000px);
+    max-width: 92vw;
+    overflow: hidden;
+    color: var(--ink);
+  }
+  .map-dialog::backdrop { background: rgba(0,0,0,0.72); backdrop-filter: blur(2px); }
+  .map-dialog-inner { position: relative; padding: 18px; }
+  .map-dialog-cap {
+    position: absolute; top: 20px; left: 22px;
+    font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--faint);
+    z-index: 2;
+  }
+  .map-dialog-close {
+    position: absolute; top: 12px; right: 12px;
+    width: 30px; height: 30px;
+    background: none;
+    border: 1px solid var(--hair);
+    border-radius: 50%;
+    color: var(--dim);
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 2;
+    transition: color 0.3s ease, border-color 0.3s ease;
+  }
+  .map-dialog-close:hover { color: var(--ink); border-color: var(--accent); }
+  .world-map { display: block; width: 100%; height: auto; }
+  .map-land path { fill: var(--land); stroke: #2c2c30; stroke-width: 0.5; vector-effect: non-scaling-stroke; }
+  .map-graticule line { stroke: rgba(255,255,255,0.04); stroke-width: 0.5; vector-effect: non-scaling-stroke; }
+  .visited-country { fill: #ece9e3; stroke: #ece9e3; stroke-width: 0.5; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+</style>
 </head>
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <a href="#top" class="header-identity" aria-label="Siddharth Rout — home">
-                <img src="assets/images/headshot.jpg" alt="" class="avatar-img" aria-hidden="true">
-                <span class="identity-text">
-                    <h1 class="identity-name">Siddharth Rout</h1>
-                    <span class="identity-subtitle">nineteen, nyc, maths + cs @ columbia</span>
-                </span>
-            </a>
 
-            <nav class="header-icons" aria-label="Social links">
-                <a href="https://www.linkedin.com/in/siddharth-rout-69a0191b9/" target="_blank" rel="noopener noreferrer" class="header-icon" aria-label="LinkedIn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="https://github.com/routsiddharth" target="_blank" rel="noopener noreferrer" class="header-icon" aria-label="GitHub">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                </a>
-                <a href="https://medium.com/@routsiddharth2911" target="_blank" rel="noopener noreferrer" class="header-icon" aria-label="Medium">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/></svg>
-                </a>
-                <a href="https://x.com/sidr29" target="_blank" rel="noopener noreferrer" class="header-icon" aria-label="X / Twitter">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                </a>
-                <a href="mailto:siddharth.rout@columbia.edu" class="header-icon" aria-label="Email">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-                </a>
-            </nav>
+<div class="shell">
 
-            <a id="spotify-link" class="spotify-card" href="https://open.spotify.com/user/routsiddharth2911" target="_blank" rel="noopener noreferrer" aria-label="Last played on Spotify" data-state="loading">
-                <span class="spotify-label">Last played</span>
-                <span class="spotify-art-wrap" aria-hidden="true">
-                    <img id="spotify-album-art" class="spotify-art" src="" alt="">
-                </span>
-                <span class="spotify-meta">
-                    <span id="spotify-track" class="spotify-track">Spotify</span>
-                    <span id="spotify-artist" class="spotify-artist"></span>
-                </span>
-                <svg class="spotify-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.78-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            </a>
+  <!-- ===== LEFT META RAIL ===== -->
+  <aside class="rail">
+    <div class="rail-top">
+      <img class="headshot" src="assets/images/headshot.jpg" alt="Siddharth Rout" />
+      <div>
+        <div class="name">Siddharth<br />Rout</div>
+        <p class="tagline">nineteen, nyc, maths&nbsp;+&nbsp;cs @ columbia</p>
+      </div>
+      <nav class="rail-nav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#currently">Currently</a>
+        <a href="#experience">Experience</a>
+        <a href="#work">Selected work</a>
+        <a href="#stats">Personal</a>
+        <a href="#reach">Reach out</a>
+      </nav>
+    </div>
+
+    <div class="rail-bottom">
+      <div>
+        <div class="np-label">
+          <span class="label">Last played</span>
+          <span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
         </div>
+        <a id="spotify-link" class="nowplaying" href="https://open.spotify.com/user/routsiddharth2911" target="_blank" rel="noopener" aria-label="Last played on Spotify">
+          <span class="np-art" aria-hidden="true"><img id="spotify-album-art" alt="" /></span>
+          <span class="np-meta">
+            <span class="np-track" id="spotify-track">Feel No Ways</span>
+            <span class="np-artist" id="spotify-artist">Drake</span>
+          </span>
+        </a>
+      </div>
+
+      <div class="socials" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/siddharth-rout-69a0191b9/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7" y1="11" x2="7" y2="16.5"/><circle cx="7" cy="7.7" r="1" fill="currentColor" stroke="none"/><path d="M11 16.5v-5.5"/><path d="M11 13.7a2.4 2.4 0 0 1 4.8 0v2.8"/></svg>
+        </a>
+        <a href="https://github.com/routsiddharth" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4 1.5-4-2-5.5-2.5M15 21v-3.5a3 3 0 0 0-.8-2.3c2.6-.3 5.3-1.3 5.3-5.8a4.5 4.5 0 0 0-1.3-3.1 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C5.8 1.1 4.8 1.4 4.8 1.4a4.2 4.2 0 0 0-.1 3.2A4.5 4.5 0 0 0 3.4 7.7c0 4.5 2.7 5.5 5.3 5.8a3 3 0 0 0-.8 2.3V21"/></svg>
+        </a>
+        <a href="https://medium.com/@routsiddharth2911" target="_blank" rel="noopener" aria-label="Medium">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="6" cy="12" rx="4.5" ry="5"/><ellipse cx="15" cy="12" rx="1.8" ry="5"/><ellipse cx="20.5" cy="12" rx="0.7" ry="5"/></svg>
+        </a>
+        <a href="https://x.com/sidr29" target="_blank" rel="noopener" aria-label="X (Twitter)">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l16 16M20 4L4 20" stroke-linecap="round"/></svg>
+        </a>
+        <a href="mailto:siddharth.rout@columbia.edu" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ===== CONTENT ===== -->
+  <main class="content">
+
+    <!-- mobile header -->
+    <header class="m-header">
+      <div class="m-top">
+        <img class="headshot" src="assets/images/headshot.jpg" alt="Siddharth Rout" />
+        <div>
+          <div class="name" style="font-family:'Newsreader',serif;font-weight:300;">Siddharth Rout</div>
+          <p class="tagline">nineteen, nyc, maths + cs @ columbia</p>
+        </div>
+      </div>
+      <a id="spotify-link-m" class="nowplaying" href="https://open.spotify.com/user/routsiddharth2911" target="_blank" rel="noopener" aria-label="Last played on Spotify">
+        <span class="np-label" style="margin:0;"><span class="label">Last played</span><span class="eq" aria-hidden="true"><span></span><span></span><span></span><span></span></span></span>
+      </a>
+      <div class="socials" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/siddharth-rout-69a0191b9/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7" y1="11" x2="7" y2="16.5"/><circle cx="7" cy="7.7" r="1" fill="currentColor" stroke="none"/><path d="M11 16.5v-5.5"/><path d="M11 13.7a2.4 2.4 0 0 1 4.8 0v2.8"/></svg></a>
+        <a href="https://github.com/routsiddharth" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 19c-4 1.5-4-2-5.5-2.5M15 21v-3.5a3 3 0 0 0-.8-2.3c2.6-.3 5.3-1.3 5.3-5.8a4.5 4.5 0 0 0-1.3-3.1 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C5.8 1.1 4.8 1.4 4.8 1.4a4.2 4.2 0 0 0-.1 3.2A4.5 4.5 0 0 0 3.4 7.7c0 4.5 2.7 5.5 5.3 5.8a3 3 0 0 0-.8 2.3V21"/></svg></a>
+        <a href="https://medium.com/@routsiddharth2911" target="_blank" rel="noopener" aria-label="Medium"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="6" cy="12" rx="4.5" ry="5"/><ellipse cx="15" cy="12" rx="1.8" ry="5"/><ellipse cx="20.5" cy="12" rx="0.7" ry="5"/></svg></a>
+        <a href="https://x.com/sidr29" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4l16 16M20 4L4 20" stroke-linecap="round"/></svg></a>
+        <a href="mailto:siddharth.rout@columbia.edu" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+      </div>
     </header>
 
-    <main id="top" class="site-main">
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="sec-head reveal"><span class="sec-num">01</span><span class="sec-title">About</span><span class="sec-rule"></span></div>
+      <p class="about reveal">
+        Studying maths and CS at Columbia. Right now I'm running partnerships at
+        <strong><a href="https://www.instagram.com/coreatcu/" target="_blank" rel="noopener">CORE</a></strong>
+        (Columbia's largest entrepreneurship community) and building
+        <strong><a href="https://www.columbiasoftwaresolutions.com/" target="_blank" rel="noopener">Columbia Software Solutions</a></strong>
+        (free software for NYC). This summer I'm at
+        <strong><a href="https://optipro.ai/" target="_blank" rel="noopener">Optipro AI</a></strong>,
+        and most recently I was building cool things at a General Catalyst-backed fintech in New York and at
+        <strong><a href="https://rayscapital.com" target="_blank" rel="noopener">RAYS Capital</a></strong>
+        in Hong Kong. Mostly I'm just jet-lagged.
+      </p>
+    </section>
 
-        <!-- ABOUT -->
-        <section class="section section-grid" id="about">
-            <h2 class="section-label">About</h2>
-            <div class="section-content">
-                <p class="about-para">Studying maths and CS at Columbia. Right now I'm running partnerships at <a href="https://www.instagram.com/coreatcu/" target="_blank" rel="noopener noreferrer">CORE</a> (Columbia's largest entrepreneurship community) and building <a href="https://www.columbiasoftwaresolutions.com/" target="_blank" rel="noopener noreferrer">Columbia Software Solutions</a> (free software for NYC). This summer I'm at <a href="https://optipro.ai/" target="_blank" rel="noopener noreferrer">Optipro AI</a>, and most recently I was building cool things at a General Catalyst-backed fintech in New York and at <a href="https://rayscapital.com" target="_blank" rel="noopener noreferrer">RAYS Capital</a> in Hong Kong. Mostly I'm just jet-lagged.</p>
-            </div>
-        </section>
-
-        <!-- CURRENTLY -->
-        <section class="section section-grid" id="currently">
-            <h2 class="section-label">Currently</h2>
-            <div class="section-content">
-                <dl class="currently-list">
-                    <div class="currently-row">
-                        <dt class="currently-label">Incoming</dt>
-                        <dd class="currently-value">
-                            <a href="https://optipro.ai/" target="_blank" rel="noopener noreferrer" class="currently-title">SWE @ Optipro AI</a>
-                            <span class="currently-desc">Building mobile and browser agents over real-time Swiggy and Zomato delivery data.</span>
-                        </dd>
-                    </div>
-                    <div class="currently-row">
-                        <dt class="currently-label">VP Partnerships</dt>
-                        <dd class="currently-value">
-                            <a href="https://www.instagram.com/coreatcu/" target="_blank" rel="noopener noreferrer" class="currently-title">CORE</a>
-                            <span class="currently-desc">Columbia's largest entrepreneurship organisation — sourcing speakers, sponsors, and partner companies across the NYC ecosystem.</span>
-                            <span class="currently-cta">If you're doing cool things in the startup space and interested in partnering with us, reach out at <a href="mailto:coreboard@columbia.edu">coreboard@columbia.edu</a>.</span>
-                        </dd>
-                    </div>
-                    <div class="currently-row">
-                        <dt class="currently-label">Founding Team</dt>
-                        <dd class="currently-value">
-                            <a href="https://www.columbiasoftwaresolutions.com/" target="_blank" rel="noopener noreferrer" class="currently-title">Columbia Software Solutions</a>
-                            <span class="currently-desc">Building free production software for NYC nonprofits, small businesses, and early-stage startups. 5+ client engagements per semester.</span>
-                            <span class="currently-cta">If you're an NYC-based nonprofit/small business/literally anyone that needs something built (for free) reach out at <a href="mailto:siddharth.rout@columbia.edu">siddharth.rout@columbia.edu</a>.</span>
-                        </dd>
-                    </div>
-                </dl>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section class="section section-grid" id="experience" hidden>
-            <h2 class="section-label">Experience</h2>
-            <div class="section-content">
-                <div class="experience-list" data-expanded="false">
-                    
-                    <article class="experience-entry">
-                        <div class="experience-row">
-                            <div class="experience-primary">
-                                <h3 class="experience-company">Optipro AI</h3>
-                                <p class="experience-role">Software Engineer | Mobile App Agents</p>
-                            </div>
-                            <div class="experience-meta">
-                                <span class="experience-date">2026</span>
-                                <span class="experience-location">Bengaluru</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="experience-entry">
-                        <div class="experience-row">
-                            <div class="experience-primary">
-                                <h3 class="experience-company">Stealth Startup</h3>
-                                <p class="experience-role">First Engineering Hire | Browser Agents/Orchestration</p>
-                            </div>
-                            <div class="experience-meta">
-                                <span class="experience-date">2026</span>
-                                <span class="experience-location">New York</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="experience-entry">
-                        <div class="experience-row">
-                            <div class="experience-primary">
-                                <h3 class="experience-company">RAYS Capital</h3>
-                                <p class="experience-role">Quantitative Systems Engineer | Trading Systems</p>
-                            </div>
-                            <div class="experience-meta">
-                                <span class="experience-date">2026</span>
-                                <span class="experience-location">Hong Kong</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="experience-entry">
-                        <div class="experience-row">
-                            <div class="experience-primary">
-                                <h3 class="experience-company">Columbia University</h3>
-                                <p class="experience-role">Applied ML Research | Prof. Nakul Verma</p>
-                            </div>
-                            <div class="experience-meta">
-                                <span class="experience-date">2025 — 26</span>
-                                <span class="experience-location">New York</span>
-                            </div>
-                        </div>
-                    </article>
-
-                    <div class="experience-hidden" id="experience-hidden" data-collapsed="true" aria-hidden="true">
-                        <div class="experience-hidden-inner">
-
-                            <article class="experience-entry">
-                                <div class="experience-row">
-                                    <div class="experience-primary">
-                                        <h3 class="experience-company">Gulf Intel</h3>
-                                        <p class="experience-role">Co-founder | Custom Software for Middle Eastern SMEs</p>
-                                    </div>
-                                    <div class="experience-meta">
-                                        <span class="experience-date">2024 — 25</span>
-                                        <span class="experience-location">Bahrain</span>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <article class="experience-entry">
-                                <div class="experience-row">
-                                    <div class="experience-primary">
-                                        <h3 class="experience-company">STC Bahrain</h3>
-                                        <p class="experience-role">Software Engineer | Multilingual Transcription/Translation</p>
-                                    </div>
-                                    <div class="experience-meta">
-                                        <span class="experience-date">2024</span>
-                                        <span class="experience-location">Bahrain</span>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <article class="experience-entry">
-                                <div class="experience-row">
-                                    <div class="experience-primary">
-                                        <h3 class="experience-company">Oxford University</h3>
-                                        <p class="experience-role">SFUDA Research Assistant | Dr. Pramit Saha</p>
-                                    </div>
-                                    <div class="experience-meta">
-                                        <span class="experience-date">2023 — 24</span>
-                                        <span class="experience-location">Oxford</span>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <article class="experience-entry">
-                                <div class="experience-row">
-                                    <div class="experience-primary">
-                                        <h3 class="experience-company">CSM Technologies</h3>
-                                        <p class="experience-role">Machine Learning Engineer | Recruitment Automation</p>
-                                    </div>
-                                    <div class="experience-meta">
-                                        <span class="experience-date">2023</span>
-                                        <span class="experience-location">India</span>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <article class="experience-entry">
-                                <div class="experience-row">
-                                    <div class="experience-primary">
-                                        <h3 class="experience-company">Discovera</h3>
-                                        <p class="experience-role">Founder | Making SMEs Visible</p>
-                                    </div>
-                                    <div class="experience-meta">
-                                        <span class="experience-date">2021 — 22</span>
-                                        <span class="experience-location">Bahrain</span>
-                                    </div>
-                                </div>
-                            </article>
-
-                        </div>
-                    </div>
-                </div>
-
-                <button class="experience-toggle" type="button" aria-expanded="false" aria-controls="experience-hidden">
-                    <span class="experience-toggle-text">Show 5 more</span>
-                    <svg class="experience-toggle-chev" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </button>
-            </div>
-        </section>
-
-        <!-- SELECTED WORK -->
-        <section class="section section-grid" id="work">
-            <h2 class="section-label">Selected work</h2>
-            <div class="section-content">
-                <div class="work-tabs" role="tablist" aria-label="Selected work">
-                    <button class="work-tab is-active" type="button" role="tab" aria-selected="true" data-target="prosperity">IMC Prosperity 4</button>
-                    <button class="work-tab" type="button" role="tab" aria-selected="false" data-target="bridgewater">Bridgewater Forecasting</button>
-                    <button class="work-tab" type="button" role="tab" aria-selected="false" data-target="sundial">Sundial</button>
-                    <button class="work-tab" type="button" role="tab" aria-selected="false" data-target="govo">Govo</button>
-                    <button class="work-tab" type="button" role="tab" aria-selected="false" data-target="roomio">Roomio</button>
-                </div>
-
-                <div class="work-cards">
-                    <article class="work-card-detail is-active" data-id="prosperity" role="tabpanel">
-                        <div class="work-card-head">
-                            <p class="work-kicker">competition · 2026</p>
-                        </div>
-                        <h3 class="work-card-title">IMC Prosperity 4</h3>
-                        <p class="work-card-desc">Algorithmic trading competition combining live programmatic rounds against bots with manual game-theoretic rounds. Built market-making engines on five simultaneous instruments, options-pricing infrastructure (GBM Monte Carlo, IV-surface fitting), and Bayesian opponent modeling for the auction rounds — predicted realized bid distributions with ~80% accuracy.</p>
-                        <div class="work-card-meta">
-                            <div class="work-meta-col">
-                                <p class="work-meta-label">result</p>
-                                <p class="work-meta-value">340 / 22,000 · Top 2% · Top 100 USA</p>
-                            </div>
-                            <div class="work-meta-col">
-                                <p class="work-meta-label">stack</p>
-                                <p class="work-meta-value">Python · NumPy · SciPy</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="work-card-detail" data-id="bridgewater" role="tabpanel">
-                        <div class="work-card-head">
-                            <p class="work-kicker">competition · 2026</p>
-                        </div>
-                        <h3 class="work-card-title">Bridgewater × Metaculus</h3>
-                        <p class="work-card-desc">Geopolitical and macro forecasting competition. Built an ensemble system combining Tetlock's superforecasting framework — base-rate anchoring, Fermi decomposition, Bayesian updating — with a 4-agent LLM debate pipeline (propose → critique → refine → judge), aggregated via geometric mean of odds and extremized against historical resolved questions.</p>
-                        <div class="work-card-meta">
-                            <div class="work-meta-col">
-                                <p class="work-meta-label">result</p>
-                                <p class="work-meta-value">100 / 3,132 · Top 3%</p>
-                            </div>
-                            <div class="work-meta-col">
-                                <p class="work-meta-label">stack</p>
-                                <p class="work-meta-value">Python · LLM orchestration</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="work-card-detail" data-id="sundial" role="tabpanel">
-                        <div class="work-card-head">
-                            <p class="work-kicker">project · 2026</p>
-                            <a class="work-card-link" href="https://github.com/routsiddharth/sundial" target="_blank" rel="noopener noreferrer" aria-label="Open Sundial on GitHub">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                            </a>
-                        </div>
-                        <h3 class="work-card-title">Sundial</h3>
-                        <p class="work-card-desc">Columbia-specific prediction market, built solo end-to-end. Continuous double-auction matching engine for liquid books, with LMSR automated market making for cold-start liquidity on new markets. Real-time WebSocket price feeds and 20+ campus-outcome markets staged for go-live.</p>
-                        <div class="work-card-meta">
-                            <div class="work-meta-col">
-                                <p class="work-meta-label">status</p>
-                                <p class="work-meta-value">500-trader waitlist</p>
-                            </div>
-                            <div class="work-meta-col">
-                                <p class="work-meta-label">stack</p>
-                                <p class="work-meta-value">Next.js · Supabase · Tailwind</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="work-card-detail" data-id="govo" role="tabpanel">
-                        <div class="work-card-head">
-                            <p class="work-kicker">project · 2025</p>
-                            <a class="work-card-link" href="https://apps.apple.com/us/app/govo-discover-your-taste/id6749336381" target="_blank" rel="noopener noreferrer" aria-label="Open Govo on the App Store">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                            </a>
-                        </div>
-                        <h3 class="work-card-title">Govo</h3>
-                        <p class="work-card-desc">Food recommendation iOS app, co-founded and live on the App Store. Builds a per-user taste model from in-app swipe interactions and serves real-time recommendations. Pretrained text embeddings with cosine similarity over running user swipe vectors — 92% pairwise accuracy after 20 swipes.</p>
-                        <div class="work-card-meta">
-                            <div class="work-meta-col">
-                                <p class="work-meta-label">users</p>
-                                <p class="work-meta-value">2,000+ · 40% wk-1 retention</p>
-                            </div>
-                            <div class="work-meta-col">
-                                <p class="work-meta-label">stack</p>
-                                <p class="work-meta-value">Swift · TypeScript · Firebase</p>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="work-card-detail" data-id="roomio" role="tabpanel">
-                        <div class="work-card-head">
-                            <p class="work-kicker">project · 2025</p>
-                            <a class="work-card-link" href="https://github.com/Archdiner/vero" target="_blank" rel="noopener noreferrer" aria-label="Open Roomio on GitHub">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                            </a>
-                        </div>
-                        <h3 class="work-card-title">Roomio</h3>
-                        <p class="work-card-desc">Roommate-matching app for university students. Swipe-based discovery on top of a lifestyle-preference matching engine (budget, cleanliness, sleep schedule, social style) with mutual-match gating. Cross-platform Flutter client backed by a FastAPI/Postgres service with JWT auth and Supabase-hosted photo uploads, deployed on Fly.io.</p>
-                        <div class="work-card-meta">
-                            <div class="work-meta-col">
-                                <p class="work-meta-label">platform</p>
-                                <p class="work-meta-value">iOS · Android</p>
-                            </div>
-                            <div class="work-meta-col">
-                                <p class="work-meta-label">stack</p>
-                                <p class="work-meta-value">Flutter · FastAPI · Supabase</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- WRITING -->
-        <!--
-        <section class="section writing-section" id="writing">
-            <p class="section-label">Writing</p>
-
-            <article class="writing-featured">
-                <a href="#" class="writing-link">
-                    <p class="writing-kicker">MAY 2026 · ESSAY</p>
-                    <h3 class="writing-title-lg">The H-1B is a startup tax on international students</h3>
-                    <p class="writing-excerpt">Why visa policy quietly funnels the most ambitious international students out of early-stage companies and into BigCo — and what to do about it.</p>
-                </a>
-            </article>
-
-            <div class="writing-secondary">
-                <article class="writing-entry">
-                    <a href="#" class="writing-link">
-                        <p class="writing-kicker">APR 2026 · NOTES</p>
-                        <h3 class="writing-title-sm">Notes from Prosperity 4</h3>
-                        <p class="writing-excerpt-sm">Delta-hedging, IV smile fitting, and what competition scoring rules teach you about real markets.</p>
-                    </a>
-                </article>
-                <article class="writing-entry">
-                    <a href="#" class="writing-link">
-                        <p class="writing-kicker">FEB 2026 · SHORT</p>
-                        <h3 class="writing-title-sm">Why I left consumer for fintech</h3>
-                        <p class="writing-excerpt-sm">A note on the tradeoffs of B2C versus B2B as a student founder.</p>
-                    </a>
-                </article>
-                <article class="writing-entry">
-                    <a href="#" class="writing-link">
-                        <p class="writing-kicker">JAN 2026 · NOTES</p>
-                        <h3 class="writing-title-sm">Conditional expectation, intuitively</h3>
-                        <p class="writing-excerpt-sm">Working through Blitzstein chapter 9 and the tower property finally clicking.</p>
-                    </a>
-                </article>
-            </div>
-        </section>
-        -->
-
-        <!-- PERSONAL STATS -->
-        <section class="section section-grid" id="off-hours">
-            <h2 class="section-label">Personal stats</h2>
-            <div class="section-content">
-                <dl class="stats-list">
-                    <div class="stat-row">
-                        <dt class="stat-label">Countries visited</dt>
-                        <dd class="stat-value">23 <span class="stat-meta">(lived in 4)</span>
-                            <button type="button" class="map-trigger" aria-label="View visited countries on a map" aria-haspopup="dialog" aria-controls="map-dialog">
-                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <circle cx="12" cy="12" r="10"></circle>
-                                    <path d="M2 12h20"></path>
-                                    <path d="M12 2a15.3 15.3 0 0 1 0 20 15.3 15.3 0 0 1 0-20z"></path>
-                                </svg>
-                            </button>
-                        </dd>
-                    </div>
-                    <div class="stat-row">
-                        <dt class="stat-label">Fashion shows walked</dt>
-                        <dd class="stat-value">1</dd>
-                    </div>
-                    <div class="stat-row">
-                        <dt class="stat-label">F1 races watched</dt>
-                        <dd class="stat-value"><span id="f1-count">223</span> <span class="stat-meta">since Bahrain 2016</span></dd>
-                    </div>
-                    <div class="stat-row">
-                        <dt class="stat-label">Most-played song, lifetime</dt>
-                        <dd class="stat-value"><a href="https://open.spotify.com/track/27V5IZgpULF7AzmLFxYouq" target="_blank" rel="noopener noreferrer">Feel No Ways</a> <span class="stat-meta">by Drake</span></dd>
-                    </div>
-                    <div class="stat-row">
-                        <dt class="stat-label">Restaurants ranked on Beli</dt>
-                        <dd class="stat-value">39</dd>
-                    </div>
-                    <div class="stat-row">
-                        <dt class="stat-label">LeetCode problems solved</dt>
-                        <dd class="stat-value">n <span class="stat-meta">· forgotten by next week: n − 1</span></dd>
-                    </div>
-                    <div class="stat-row">
-                        <dt class="stat-label">Projects started but never completed</dt>
-                        <dd class="stat-value">too many to count</dd>
-                    </div>
-                </dl>
-                <p class="stats-footnote">(and counting!)</p>
-            </div>
-        </section>
-
-        <!-- REACH OUT -->
-        <section class="section section-grid reach-section" id="reach">
-            <h2 class="section-label">Reach out</h2>
-            <div class="section-content reach-content">
-                <div class="reach-left">
-                    <p class="reach-headline">If the work above looks interesting, I'd love to hear from you. The fastest way to reach me is <a href="mailto:siddharth.rout@columbia.edu">email</a>.</p>
-                </div>
-                <nav class="reach-right" aria-label="Elsewhere">
-                    <p class="reach-elsewhere-label">Elsewhere</p>
-                    <ul class="reach-links">
-                        <li><a href="https://www.linkedin.com/in/siddharth-rout-69a0191b9/" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">→</span></a></li>
-                        <li><a href="https://github.com/routsiddharth" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">→</span></a></li>
-                        <li><a href="https://x.com/sidr29" target="_blank" rel="noopener noreferrer">X / Twitter <span aria-hidden="true">→</span></a></li>
-                        <li><a href="https://medium.com/@routsiddharth2911" target="_blank" rel="noopener noreferrer">Medium <span aria-hidden="true">→</span></a></li>
-                    </ul>
-                </nav>
-            </div>
-        </section>
-
-        <footer class="site-footer">
-            <span>sidrout.com · new york</span>
-            <span>last updated <time datetime="2026-05">may 2026</time></span>
-        </footer>
-
-    </main>
-
-    <!-- Visited-cities world map -->
-    <dialog id="map-dialog" class="map-dialog" aria-label="Cities I've visited">
-        <div class="map-dialog-inner">
-            <button class="map-dialog-close" type="button" aria-label="Close map">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M18 6 6 18"></path>
-                    <path d="m6 6 12 12"></path>
-                </svg>
-            </button>
-            <svg class="world-map" viewBox="0 0 2000 1000" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map with visited countries filled in white">
-                <g class="map-graticule"></g>
-                <g class="map-land"></g>
-                <g class="visited-countries"></g>
-                <g class="visited-dots"></g>
-            </svg>
+    <!-- CURRENTLY -->
+    <section id="currently">
+      <div class="sec-head reveal"><span class="sec-num">02</span><span class="sec-title">Currently</span><span class="sec-rule"></span></div>
+      <div class="dl reveal">
+        <div class="dl-row">
+          <div class="dl-key">Incoming</div>
+          <div class="dl-val">
+            <div class="dl-title"><a href="https://optipro.ai/" target="_blank" rel="noopener">SWE @ Optipro AI</a></div>
+            <div class="dl-desc">Building mobile and browser agents over real-time Swiggy and Zomato delivery data.</div>
+          </div>
         </div>
-    </dialog>
+        <div class="dl-row">
+          <div class="dl-key">VP Partnerships</div>
+          <div class="dl-val">
+            <div class="dl-title"><a href="https://www.instagram.com/coreatcu/" target="_blank" rel="noopener">CORE</a></div>
+            <div class="dl-desc">Columbia's largest entrepreneurship organisation — sourcing speakers, sponsors, and partner companies across the NYC ecosystem.</div>
+            <div class="dl-cta">If you're doing cool things in the startup space and interested in partnering with us, reach out at <a href="mailto:coreboard@columbia.edu">coreboard@columbia.edu</a>.</div>
+          </div>
+        </div>
+        <div class="dl-row">
+          <div class="dl-key">Founding Team</div>
+          <div class="dl-val">
+            <div class="dl-title"><a href="https://www.columbiasoftwaresolutions.com/" target="_blank" rel="noopener">Columbia Software Solutions</a></div>
+            <div class="dl-desc">Building free production software for NYC nonprofits, small businesses, and early-stage startups. 5+ client engagements per semester.</div>
+            <div class="dl-cta">If you're an NYC-based nonprofit/small business/literally anyone that needs something built (for free) reach out at <a href="mailto:siddharth.rout@columbia.edu">siddharth.rout@columbia.edu</a>.</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="assets/js/script.js"></script>
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="sec-head reveal"><span class="sec-num">03</span><span class="sec-title">Experience</span><span class="sec-rule"></span></div>
+      <div class="xp reveal">
+        <div class="xp-row">
+          <div class="xp-left"><div class="xp-co">Optipro AI</div><div class="xp-role">Software Engineer | Mobile App Agents</div></div>
+          <div class="xp-meta">2026<span class="xp-loc">Bengaluru</span></div>
+        </div>
+        <div class="xp-row">
+          <div class="xp-left"><div class="xp-co">Stealth Startup</div><div class="xp-role">First Engineering Hire | Browser Agents / Orchestration</div></div>
+          <div class="xp-meta">2026<span class="xp-loc">New York</span></div>
+        </div>
+        <div class="xp-row">
+          <div class="xp-left"><div class="xp-co">RAYS Capital</div><div class="xp-role">Quantitative Systems Engineer | Trading Systems</div></div>
+          <div class="xp-meta">2026<span class="xp-loc">Hong Kong</span></div>
+        </div>
+        <div class="xp-row">
+          <div class="xp-left"><div class="xp-co">Columbia University</div><div class="xp-role">Applied ML Research | Prof. Nakul Verma</div></div>
+          <div class="xp-meta">2025–26<span class="xp-loc">New York</span></div>
+        </div>
+
+        <div class="xp-row xp-hidden">
+          <div class="xp-left"><div class="xp-co">Gulf Intel</div><div class="xp-role">Co-founder | Custom Software for Middle Eastern SMEs</div></div>
+          <div class="xp-meta">2024–25<span class="xp-loc">Bahrain</span></div>
+        </div>
+        <div class="xp-row xp-hidden">
+          <div class="xp-left"><div class="xp-co">STC Bahrain</div><div class="xp-role">Software Engineer | Multilingual Transcription / Translation</div></div>
+          <div class="xp-meta">2024<span class="xp-loc">Bahrain</span></div>
+        </div>
+        <div class="xp-row xp-hidden">
+          <div class="xp-left"><div class="xp-co">Oxford University</div><div class="xp-role">SFUDA Research Assistant | Dr. Pramit Saha</div></div>
+          <div class="xp-meta">2023–24<span class="xp-loc">Oxford</span></div>
+        </div>
+        <div class="xp-row xp-hidden">
+          <div class="xp-left"><div class="xp-co">CSM Technologies</div><div class="xp-role">Machine Learning Engineer | Recruitment Automation</div></div>
+          <div class="xp-meta">2023<span class="xp-loc">India</span></div>
+        </div>
+        <div class="xp-row xp-hidden">
+          <div class="xp-left"><div class="xp-co">Discovera</div><div class="xp-role">Founder | Making SMEs Visible</div></div>
+          <div class="xp-meta">2021–22<span class="xp-loc">Bahrain</span></div>
+        </div>
+      </div>
+      <button class="toggle" id="xp-toggle" aria-expanded="false"><span class="tog-mark">+</span><span id="xp-toggle-text">Show 5 more</span></button>
+    </section>
+
+    <!-- SELECTED WORK -->
+    <section id="work">
+      <div class="sec-head reveal"><span class="sec-num">04</span><span class="sec-title">Selected work</span><span class="sec-rule"></span></div>
+      <div class="work reveal">
+
+        <div class="work-item">
+          <button class="work-summary" aria-expanded="false">
+            <span class="work-name">IMC Prosperity 4</span>
+            <span class="work-kind">algorithmic trading competition · 2026</span>
+            <span class="work-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="work-body"><div class="work-body-inner">
+            <p class="work-desc">Algorithmic trading competition combining live programmatic rounds against bots with manual game-theoretic rounds. Built market-making engines on five simultaneous instruments, options-pricing infrastructure (GBM Monte Carlo, IV-surface fitting), and Bayesian opponent modeling for the auction rounds — predicted realized bid distributions with ~80% accuracy.</p>
+            <div class="work-foot">
+              <span class="work-result">340 / 22,000 · Top 2% · Top 100 USA</span>
+              <span class="work-stack">Python · NumPy · SciPy</span>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="work-item">
+          <button class="work-summary" aria-expanded="false">
+            <span class="work-name">Bridgewater × Metaculus</span>
+            <span class="work-kind">forecasting competition · 2026</span>
+            <span class="work-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="work-body"><div class="work-body-inner">
+            <p class="work-desc">Geopolitical and macro forecasting competition. Built an ensemble system combining Tetlock's superforecasting framework — base-rate anchoring, Fermi decomposition, Bayesian updating — with a 4-agent LLM debate pipeline (propose → critique → refine → judge), aggregated via geometric mean of odds and extremized against historical resolved questions.</p>
+            <div class="work-foot">
+              <span class="work-result">100 / 3,132 · Top 3%</span>
+              <span class="work-stack">Python · LLM orchestration</span>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="work-item">
+          <button class="work-summary" aria-expanded="false">
+            <span class="work-name">Sundial</span>
+            <span class="work-kind">Columbia prediction market · 2026</span>
+            <span class="work-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="work-body"><div class="work-body-inner">
+            <p class="work-desc">Columbia-specific prediction market, built solo end-to-end. Continuous double-auction matching engine for liquid books, with LMSR automated market making for cold-start liquidity on new markets. Real-time WebSocket price feeds and 20+ campus-outcome markets staged for go-live.</p>
+            <div class="work-foot">
+              <span class="work-result">500-trader waitlist</span>
+              <span class="work-stack">Next.js · Supabase · Tailwind</span>
+              <a class="work-link" href="https://github.com/routsiddharth/sundial" target="_blank" rel="noopener">View repo →</a>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="work-item">
+          <button class="work-summary" aria-expanded="false">
+            <span class="work-name">Govo</span>
+            <span class="work-kind">taste recommendation engine · 2025</span>
+            <span class="work-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="work-body"><div class="work-body-inner">
+            <p class="work-desc">Food recommendation iOS app, co-founded and live on the App Store. Builds a per-user taste model from in-app swipe interactions and serves real-time recommendations. Pretrained text embeddings with cosine similarity over running user swipe vectors — 92% pairwise accuracy after 20 swipes.</p>
+            <div class="work-foot">
+              <span class="work-result">2,000+ users · 40% wk-1 retention</span>
+              <span class="work-stack">Swift · TypeScript · Firebase</span>
+              <a class="work-link" href="https://apps.apple.com/us/app/govo-discover-your-taste/id6749336381" target="_blank" rel="noopener">App Store →</a>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="work-item">
+          <button class="work-summary" aria-expanded="false">
+            <span class="work-name">Roomio</span>
+            <span class="work-kind">roommate matching app · 2025</span>
+            <span class="work-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="work-body"><div class="work-body-inner">
+            <p class="work-desc">Roommate-matching app for university students. Swipe-based discovery on top of a lifestyle-preference matching engine (budget, cleanliness, sleep schedule, social style) with mutual-match gating. Cross-platform Flutter client backed by a FastAPI/Postgres service with JWT auth and Supabase-hosted photo uploads, deployed on Fly.io.</p>
+            <div class="work-foot">
+              <span class="work-result">iOS · Android</span>
+              <span class="work-stack">Flutter · FastAPI · Supabase</span>
+              <a class="work-link" href="https://github.com/Archdiner/vero" target="_blank" rel="noopener">View repo →</a>
+            </div>
+          </div></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PERSONAL STATS -->
+    <section id="stats">
+      <div class="sec-head reveal"><span class="sec-num">05</span><span class="sec-title">Personal</span><span class="sec-rule"></span></div>
+      <div class="stats reveal">
+        <div class="stat-row">
+          <div class="stat-key">Countries visited</div>
+          <div class="stat-val">23 <span class="muted">(lived in 4)</span>
+            <button type="button" class="map-trigger" aria-haspopup="dialog" aria-controls="map-dialog" aria-label="View visited countries on a map">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="3.2"/><path d="M12 2c4 0 7 3 7 7 0 4.5-7 13-7 13S5 13.5 5 9c0-4 3-7 7-7Z"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-key">Fashion shows walked</div>
+          <div class="stat-val">1</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-key">F1 races watched</div>
+          <div class="stat-val"><span id="f1-count">223</span> <span class="muted">(since Bahrain 2016)</span></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-key">Most-played song, lifetime</div>
+          <div class="stat-val"><a href="https://open.spotify.com/track/27V5IZgpULF7AzmLFxYouq" target="_blank" rel="noopener">"Feel No Ways" by Drake</a></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-key">Restaurants ranked on Beli</div>
+          <div class="stat-val">39</div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-key">LeetCode problems solved</div>
+          <div class="stat-val">n <span class="muted">(forgotten by next week: n − 1)</span></div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-key">Projects started but never completed</div>
+          <div class="stat-val"><span class="muted">too many to count</span></div>
+        </div>
+      </div>
+      <p class="stat-foot reveal">(and counting!)</p>
+    </section>
+
+    <!-- REACH OUT -->
+    <section id="reach">
+      <div class="sec-head reveal"><span class="sec-num">06</span><span class="sec-title">Reach out</span><span class="sec-rule"></span></div>
+      <p class="reach-lead reveal">If the work above looks interesting, I'd love to hear from you. The fastest way to reach me is <a href="mailto:siddharth.rout@columbia.edu">email</a>.</p>
+      <div class="reach-elsewhere reveal">
+        <a href="https://www.linkedin.com/in/siddharth-rout-69a0191b9/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/routsiddharth" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://x.com/sidr29" target="_blank" rel="noopener">X / Twitter</a>
+        <a href="https://medium.com/@routsiddharth2911" target="_blank" rel="noopener">Medium</a>
+      </div>
+    </section>
+
+    <footer>
+      <span>sidrout.com · new york</span>
+      <span>last updated may 2026</span>
+    </footer>
+
+  </main>
+</div>
+
+<!-- ===== MAP DIALOG ===== -->
+<dialog id="map-dialog" class="map-dialog" aria-label="Countries I've visited">
+  <div class="map-dialog-inner">
+    <span class="map-dialog-cap">Countries visited</span>
+    <button class="map-dialog-close" type="button" aria-label="Close map">✕</button>
+    <svg class="world-map" viewBox="0 0 2000 1000" preserveAspectRatio="xMidYMid meet" role="img" aria-label="World map with visited countries filled">
+      <g class="map-graticule"></g>
+      <g class="map-land"></g>
+      <g class="visited-countries"></g>
+    </svg>
+  </div>
+</dialog>
+
+<script>
+  /* ---------- reveal on scroll (robust + fallback) ---------- */
+  (function () {
+    var els = document.querySelectorAll('.reveal');
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) {
+      els.forEach(function (e) { e.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.01 });
+    els.forEach(function (e) { io.observe(e); });
+    /* safety fallback: ensure everything visible shortly after load */
+    window.addEventListener('load', function () {
+      setTimeout(function () { els.forEach(function (e) { e.classList.add('in'); }); }, 1400);
+    });
+  })();
+
+  /* ---------- scrollspy: highlight the current section in the rail nav ---------- */
+  (function () {
+    var links = Array.prototype.slice.call(document.querySelectorAll('.rail-nav a'));
+    if (!links.length) return;
+    var sections = links
+      .map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); })
+      .filter(Boolean);
+    var raf = null;
+    function update() {
+      raf = null;
+      var marker = window.innerHeight * 0.32;   // the line that "enters" a section
+      var current = sections[0];
+      sections.forEach(function (s) {
+        if (s.getBoundingClientRect().top <= marker) current = s;
+      });
+      // near the very bottom, force the last section active
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+        current = sections[sections.length - 1];
+      }
+      var id = current ? current.id : '';
+      links.forEach(function (a) {
+        a.classList.toggle('active', a.getAttribute('href').slice(1) === id);
+      });
+    }
+    function onScroll() { if (raf == null) raf = requestAnimationFrame(update); }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  })();
+
+  /* ---------- experience show-more ---------- */
+  (function () {
+    var btn = document.getElementById('xp-toggle');
+    var txt = document.getElementById('xp-toggle-text');
+    var mark = btn ? btn.querySelector('.tog-mark') : null;
+    if (!btn) return;
+    var hidden = document.querySelectorAll('.xp-hidden');
+    var open = false;
+    btn.addEventListener('click', function () {
+      open = !open;
+      hidden.forEach(function (r) { r.classList.toggle('open', open); });
+      btn.setAttribute('aria-expanded', String(open));
+      txt.textContent = open ? 'Show less' : 'Show 5 more';
+      if (mark) mark.textContent = open ? '−' : '+';
+    });
+  })();
+
+  /* ---------- selected work accordion ---------- */
+  (function () {
+    var items = document.querySelectorAll('.work-item');
+    items.forEach(function (item) {
+      var btn = item.querySelector('.work-summary');
+      btn.addEventListener('click', function () {
+        var isOpen = item.classList.contains('open');
+        items.forEach(function (o) { o.classList.remove('open'); o.querySelector('.work-summary').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+      });
+    });
+  })();
+
+  /* ---------- F1 live counter ---------- */
+  (function () {
+    var el = document.getElementById('f1-count'); if (!el) return;
+    var start = new Date('2016-04-03T00:00:00Z');
+    var yrs = (Date.now() - start.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
+    el.textContent = Math.round(yrs * 22);
+  })();
+
+  /* ---------- Spotify last-played ---------- */
+  (function () {
+    var card = document.getElementById('spotify-link'); if (!card) return;
+    fetch('https://spotify-last-played.routsiddharth2911.workers.dev/last-played', { mode: 'cors' })
+      .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function (d) {
+        if (!d || !d.name) return;
+        var tr = document.getElementById('spotify-track'); if (tr) tr.textContent = d.name;
+        var ar = document.getElementById('spotify-artist'); if (ar) ar.textContent = d.artist || '';
+        var art = document.getElementById('spotify-album-art'); if (art && d.albumArt) art.src = d.albumArt;
+        if (d.songUrl) card.href = d.songUrl;
+        card.dataset.state = 'ready';
+      })
+      .catch(function () { card.dataset.state = 'error'; });
+  })();
+
+  /* ---------- world map popup ---------- */
+  (function () {
+    var SVG_NS = 'http://www.w3.org/2000/svg';
+    var MAP_SRC = 'assets/maps/world-equirect.js';
+    var COUNTRIES_SRC = 'assets/maps/visited-countries.js';
+    var trigger = document.querySelector('.map-trigger');
+    var dialog = document.getElementById('map-dialog');
+    if (!trigger || !dialog || typeof dialog.showModal !== 'function') return;
+    var closeBtn = dialog.querySelector('.map-dialog-close');
+    var mapLand = dialog.querySelector('.map-land');
+    var graticule = dialog.querySelector('.map-graticule');
+    var countriesGroup = dialog.querySelector('.visited-countries');
+    var built = false;
+    var projX = function (lon) { return ((lon + 180) / 360) * 2000; };
+    var projY = function (lat) { return ((90 - lat) / 180) * 1000; };
+    function drawGraticule() { for (var lon = -180; lon <= 180; lon += 30) { var l = document.createElementNS(SVG_NS, 'line'); var x = projX(lon); l.setAttribute('x1', x); l.setAttribute('y1', 0); l.setAttribute('x2', x); l.setAttribute('y2', 1000); graticule.appendChild(l); } for (var lat = -60; lat <= 90; lat += 30) { var l2 = document.createElementNS(SVG_NS, 'line'); var y = projY(lat); l2.setAttribute('x1', 0); l2.setAttribute('y1', y); l2.setAttribute('x2', 2000); l2.setAttribute('y2', y); graticule.appendChild(l2); } }
+    function drawLand(paths) { var f = document.createDocumentFragment(); paths.forEach(function (d) { var p = document.createElementNS(SVG_NS, 'path'); p.setAttribute('d', d); f.appendChild(p); }); mapLand.appendChild(f); }
+    function drawCountries(cs) { var f = document.createDocumentFragment(); cs.forEach(function (c) { var p = document.createElementNS(SVG_NS, 'path'); p.setAttribute('d', c.d); p.setAttribute('class', 'visited-country'); var t = document.createElementNS(SVG_NS, 'title'); t.textContent = c.n; p.appendChild(t); f.appendChild(p); }); countriesGroup.appendChild(f); }
+    function loadScript(src, ready, draw) { var e = ready(); if (e) { draw(e); return; } var s = document.createElement('script'); s.src = src; s.onload = function () { var d = ready(); if (d) draw(d); }; document.head.appendChild(s); }
+    function build() { if (built) return; built = true; drawGraticule(); loadScript(MAP_SRC, function () { return window.__WORLD_PATHS; }, drawLand); loadScript(COUNTRIES_SRC, function () { return window.__VISITED_COUNTRIES; }, drawCountries); }
+    trigger.addEventListener('click', function () { build(); dialog.showModal(); if (closeBtn) closeBtn.focus(); });
+    if (closeBtn) closeBtn.addEventListener('click', function () { dialog.close(); });
+    dialog.addEventListener('click', function (e) { if (e.target === dialog) dialog.close(); });
+  })();
+</script>
 </body>
 </html>
