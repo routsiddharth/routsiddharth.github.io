@@ -123,6 +123,10 @@
   .leg-side{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
   .leg-name{color:var(--ink);font-size:13.5px}
   .leg-tk{color:var(--faint);font-size:11px;font-family:"Space Grotesk";letter-spacing:.02em}
+  .leg-stat{font-size:11.5px;letter-spacing:.04em;white-space:nowrap;font-variant-numeric:tabular-nums}
+  .leg-stat.won{color:var(--accent)}
+  .leg-stat.lost{color:var(--faint);text-decoration:line-through}
+  .leg-stat.live{color:var(--dim)}
 
   .rules{grid-column:1 / -1;color:var(--dim);font-size:13px;margin-top:16px;
     padding-top:14px;border-top:1px solid var(--hair-soft);max-width:70ch}
@@ -276,19 +280,30 @@ function model(entry) {
   const notional = num(m.notional_value_dollars) || 1;    // $1 per winning contract
   const maxPayout = contracts * notional;
 
-  const bid = side === "yes" ? num(m.yes_bid_dollars) : num(m.no_bid_dollars);
-  const ask = side === "yes" ? num(m.yes_ask_dollars) : num(m.no_ask_dollars);
-  const yesLast = num(m.last_price_dollars);
-  const markPx = side === "yes" ? yesLast : (1 - yesLast); // per-share mark for held side
-  const cashOut = contracts * bid;                         // liquidation value @ bid
-  const markVal = contracts * markPx;
-  const avg = contracts ? cost / contracts : 0;
-  const pnl = cashOut - cost;
-  const markPnl = markVal - cost;
-
   let legs = Array.isArray(m.mve_selected_legs) ? m.mve_selected_legs : [];
   const isCombo = legs.length > 0;
   const subtitle = side === "yes" ? m.yes_sub_title : m.no_sub_title;
+  const avg = contracts ? cost / contracts : 0;
+
+  // Pricing. Singles cash out at the orderbook bid. Combos have no tradeable
+  // bid, so the Worker prices them from their legs (combo_mark_dollars).
+  let bid, ask, markPx, cashOut, markVal, hasBid;
+  if (isCombo) {
+    const comboPx = num(m.combo_mark_dollars);
+    bid = ask = markPx = comboPx;
+    cashOut = markVal = contracts * comboPx;
+    hasBid = true; // we always have a leg-derived value to show
+  } else {
+    bid = side === "yes" ? num(m.yes_bid_dollars) : num(m.no_bid_dollars);
+    ask = side === "yes" ? num(m.yes_ask_dollars) : num(m.no_ask_dollars);
+    const yesLast = num(m.last_price_dollars);
+    markPx = side === "yes" ? yesLast : (1 - yesLast); // per-share mark for held side
+    cashOut = contracts * bid;                          // liquidation value @ bid
+    markVal = contracts * markPx;
+    hasBid = bid > 0;
+  }
+  const pnl = cashOut - cost;
+  const markPnl = markVal - cost;
 
   // For combos, the human-readable leg names live in yes_sub_title, comma-
   // separated and index-aligned with mve_selected_legs (e.g. "yes Scotland,…").
@@ -305,7 +320,8 @@ function model(entry) {
     cost, fees, notional, maxPayout, bid, ask, markPx, cashOut, markVal, avg, pnl, markPnl,
     legs, isCombo, name, selection, title: m.title, subtitle,
     expires: m.expiration_time, lastTrade: p.last_updated_ts, rules: m.rules_primary,
-    resting: p.resting_orders_count || 0, hasBid: bid > 0,
+    resting: p.resting_orders_count || 0, hasBid,
+    comboPx: isCombo ? num(m.combo_mark_dollars) : null,
   };
 }
 
@@ -338,7 +354,7 @@ function render(data) {
   const pnlCls = t.pnl >= 0 ? "pnl-up" : "pnl-down";
   const sign = t.pnl >= 0 ? "+" : "−";
   $("s-pnl").innerHTML = '<span class="' + pnlCls + '">' + sign + usd(Math.abs(t.pnl)).slice(1) +
-    " (" + sign + Math.abs(pnlPct).toFixed(1) + "%)</span> at bid · mark " + usd(t.mark);
+    " (" + sign + Math.abs(pnlPct).toFixed(1) + "%)</span> unrealized";
 
   const bal = data.balance || {};
   const balDollars = bal.balance_dollars != null ? num(bal.balance_dollars)
@@ -380,16 +396,20 @@ function row(m) {
     ? '<span class="' + pnlCls + '">' + pnlStr + "</span>"
     : '<span class="' + markPnlCls + '">' + signed(m.markPnl) + '</span><span class="q">at mark</span>';
 
+  const priceRow = m.isCombo
+    ? dlRow("Combo price", cents(m.comboPx) + '<span class="q">priced from legs</span>')
+    : dlRow("Current bid", m.hasBid ? cents(m.bid) + (m.ask ? '<span class="q">ask ' + cents(m.ask) + "</span>" : "") : '<span class="q" style="margin:0">no bid</span>');
+
   const dl = [
     dlRow("Bet", esc(m.isCombo ? (m.legs.length + "-leg parlay") : m.title)),
     dlRow("Position", sideLabel + " &nbsp;·&nbsp; " + qty(m.contracts) + " contracts"),
     m.isCombo ? "" : dlRow("Selection", esc(m.selection || "—")),
     dlRow("Avg entry", cents(m.avg)),
     dlRow("Cost basis", usd(m.cost)),
-    dlRow("Current bid", m.hasBid ? cents(m.bid) + (m.ask ? '<span class="q">ask ' + cents(m.ask) + "</span>" : "") : '<span class="q" style="margin:0">no bid</span>'),
+    priceRow,
     dlRow("Cash-out now", usd(m.cashOut) + (m.hasBid ? "" : '<span class="q">illiquid</span>'), true),
     dlRow("Unrealized P&L", pnlDl),
-    dlRow("Mark / last", cents(m.markPx) + '<span class="q">' + usd(m.markVal) + " val</span>"),
+    m.isCombo ? "" : dlRow("Mark / last", cents(m.markPx) + '<span class="q">' + usd(m.markVal) + " val</span>"),
     dlRow("Max payout", usd(m.maxPayout)),
     dlRow("Fees paid", usd(m.fees)),
     dlRow("Last trade", fmtDate(m.lastTrade)),
@@ -409,9 +429,7 @@ function row(m) {
         "</div>" +
         '<div class="pos-r">' +
           '<div class="pos-val mono">' + usd(m.cashOut) +
-            '<div class="d">' + (m.hasBid
-              ? '<span class="' + pnlCls + '">' + pnlStr + "</span> · max " + usd(m.maxPayout)
-              : "no bid · mark " + usd(m.markVal) + " · max " + usd(m.maxPayout)) + "</div>" +
+            '<div class="d"><span class="' + pnlCls + '">' + pnlStr + "</span> · max " + usd(m.maxPayout) + "</div>" +
           "</div>" +
           '<span class="plus">+</span>' +
         "</div>" +
@@ -428,14 +446,23 @@ function dlRow(k, v, accent) {
 }
 
 function legsBlock(m) {
-  const rows = m.legs.map((l) =>
-    '<div class="leg">' +
-      '<span class="leg-side">' + (l.side || "yes") + "</span>" +
-      '<span class="leg-name">' + esc(l.label || "") + "</span>" +
-      '<span class="leg-tk">' + esc(l.market_ticker || "") + "</span>" +
-    "</div>"
-  ).join("");
-  return '<div class="legs"><div class="legs-h">' + m.legs.length + " legs — all must hit</div>" + rows + "</div>";
+  const rows = m.legs.map((l) => {
+    let stat;
+    if (l.leg_result === "won") stat = '<span class="leg-stat won">✓ won</span>';
+    else if (l.leg_result === "lost") stat = '<span class="leg-stat lost">✗ lost</span>';
+    else stat = '<span class="leg-stat live">' + cents(l.current_price_dollars) + "</span>";
+    return (
+      '<div class="leg">' +
+        '<span class="leg-side">' + (l.side || "yes") + "</span>" +
+        '<span class="leg-name">' + esc(l.leg_title || l.label || "") + "</span>" +
+        stat +
+      "</div>"
+    );
+  }).join("");
+  const won = m.legs.filter((l) => l.leg_result === "won").length;
+  const open = m.legs.filter((l) => !l.leg_result).length;
+  const head = m.legs.length + " legs — all must hit · " + won + " won, " + open + " live";
+  return '<div class="legs"><div class="legs-h">' + head + "</div>" + rows + "</div>";
 }
 
 function showError(msg, isSetup) {

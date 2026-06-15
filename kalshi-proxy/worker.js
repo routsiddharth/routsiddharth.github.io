@@ -99,6 +99,52 @@ async function kalshi(env, method, path, query = "") {
 }
 
 // --- payload -------------------------------------------------------------
+const num = (x) => parseFloat(x) || 0;
+
+// Current "yes" probability for a single leg market: 1/0 if it has resolved,
+// otherwise the mid of bid/ask, falling back to last trade.
+function legYesProb(lm) {
+  if (!lm) return null;
+  if (lm.result === "yes") return 1;
+  if (lm.result === "no") return 0;
+  const yb = num(lm.yes_bid_dollars), ya = num(lm.yes_ask_dollars), last = num(lm.last_price_dollars);
+  if (yb > 0 && ya > 0 && ya < 1) return (yb + ya) / 2;
+  if (last > 0) return last;
+  if (ya > 0 && ya < 1) return ya;
+  if (yb > 0) return yb;
+  return 0;
+}
+
+// Combos (multivariate parlays) have no tradeable orderbook of their own, so
+// their cash-out value = product of each leg's current held-side price. Fetch
+// every leg, enrich it with status/price, and attach a combo mark to the market.
+async function priceCombo(env, m) {
+  const legs = m.mve_selected_legs;
+  const legMarkets = await Promise.all(
+    legs.map((l) =>
+      kalshi(env, "GET", "/trade-api/v2/markets/" + encodeURIComponent(l.market_ticker))
+        .then((r) => r.market)
+        .catch(() => null)
+    )
+  );
+  let combined = 1, ok = true;
+  legs.forEach((l, i) => {
+    const lm = legMarkets[i];
+    const yesP = legYesProb(lm);
+    if (yesP == null) { ok = false; return; }
+    const px = l.side === "no" ? 1 - yesP : yesP;
+    l.current_price_dollars = px;
+    l.resolved = lm && (lm.result === "yes" || lm.result === "no") ? lm.result : null;
+    // does the held side match how this leg settled? (won/lost the leg)
+    l.leg_result = l.resolved ? (l.resolved === l.side ? "won" : "lost") : null;
+    l.leg_title = lm ? (l.side === "no" ? lm.no_sub_title : lm.yes_sub_title) : null;
+    l.leg_status = lm ? lm.status : null;
+    combined *= px;
+  });
+  // If any leg couldn't be priced, fall back to the combo's own last trade.
+  m.combo_mark_dollars = ok ? combined : num(m.last_price_dollars);
+}
+
 async function buildPayload(env) {
   const [posResp, balResp] = await Promise.all([
     kalshi(env, "GET", "/trade-api/v2/portfolio/positions", "?count_filter=position&limit=1000"),
@@ -115,6 +161,15 @@ async function buildPayload(env) {
       kalshi(env, "GET", "/trade-api/v2/markets/" + encodeURIComponent(p.ticker))
         .then((r) => r.market)
         .catch(() => null)
+    )
+  );
+
+  // Price any combos from their legs (adds a few more market fetches).
+  await Promise.all(
+    markets.map((m) =>
+      m && Array.isArray(m.mve_selected_legs) && m.mve_selected_legs.length
+        ? priceCombo(env, m)
+        : Promise.resolve()
     )
   );
 
