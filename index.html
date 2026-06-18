@@ -968,7 +968,7 @@
       <div class="stats reveal">
         <div class="stat-row">
           <div class="stat-key">Countries visited</div>
-          <div class="stat-val">23 <span class="muted">(lived in 4)</span>
+          <div class="stat-val"><span class="count">23</span> <span class="muted">(lived in 4)</span>
             <button type="button" class="map-trigger" aria-haspopup="dialog" aria-controls="map-dialog" aria-label="View visited countries on a map">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="10" r="3.2"/><path d="M12 2c4 0 7 3 7 7 0 4.5-7 13-7 13S5 13.5 5 9c0-4 3-7 7-7Z"/></svg>
             </button>
@@ -980,7 +980,7 @@
         </div>
         <div class="stat-row">
           <div class="stat-key">F1 races watched</div>
-          <div class="stat-val"><span id="f1-count">223</span> <span class="muted">(since Bahrain 2016)</span></div>
+          <div class="stat-val"><span id="f1-count" class="count">223</span> <span class="muted">(since Bahrain 2016)</span></div>
         </div>
         <div class="stat-row">
           <div class="stat-key">Most-played song, lifetime</div>
@@ -988,7 +988,7 @@
         </div>
         <div class="stat-row">
           <div class="stat-key">Restaurants ranked on Beli</div>
-          <div class="stat-val">39</div>
+          <div class="stat-val"><span class="count">39</span></div>
         </div>
         <div class="stat-row">
           <div class="stat-key">LeetCode problems solved</div>
@@ -1122,6 +1122,91 @@
     var start = new Date('2016-04-03T00:00:00Z');
     var yrs = (Date.now() - start.getTime()) / (365.25 * 24 * 60 * 60 * 1000);
     el.textContent = Math.round(yrs * 22);
+  })();
+
+  /* ---------- stats count-up (animate numbers in when scrolled into view) ---------- */
+  (function () {
+    var els = Array.prototype.slice.call(document.querySelectorAll('.stat-val .count'));
+    if (!els.length) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;   // leave the real values in place
+    var easeOut = function (t) { return 1 - Math.pow(1 - t, 4); };   // quick off the line, long slow tail
+    function run(el) {
+      var target = parseInt((el.textContent || '').replace(/[^0-9]/g, ''), 10);
+      if (!isFinite(target)) return;
+      var dur = 2000 + Math.random() * 4000, startT = null;   // each number independently takes 2–6s
+      el.textContent = '0';
+      function frame(ts) {
+        if (startT == null) startT = ts;
+        var p = Math.min((ts - startT) / dur, 1);
+        el.textContent = Math.round(easeOut(p) * target).toString();
+        if (p < 1) requestAnimationFrame(frame);
+        else el.textContent = target.toString();
+      }
+      requestAnimationFrame(frame);
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { run(en.target); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    els.forEach(function (e) { io.observe(e); });
+  })();
+
+  /* ---------- section-title scramble / decode on reveal ---------- */
+  (function () {
+    var titles = Array.prototype.slice.call(document.querySelectorAll('.sec-title'));
+    if (!titles.length) return;
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce || !('IntersectionObserver' in window)) return;   // leave titles as-is
+    var GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    function rand() { return GLYPHS.charAt((Math.random() * GLYPHS.length) | 0); }
+    function inView(el) {
+      var r = el.getBoundingClientRect();
+      return r.top < window.innerHeight && r.bottom > 0;
+    }
+    function scramble(el, done) {
+      var final = el.getAttribute('data-final') || el.textContent;
+      el.setAttribute('data-final', final);
+      var n = final.length;
+      var dur = 1500, rollEvery = 55;         // slower decode; re-roll glyphs ~18x/sec → smooth, not flickery
+      var startT = null, lastRoll = 0, glyphs = new Array(n);
+      function frame(ts) {
+        if (startT == null) { startT = ts; lastRoll = ts; }
+        var p = Math.min((ts - startT) / dur, 1);
+        var roll = (ts - lastRoll) >= rollEvery;
+        if (roll) lastRoll = ts;
+        var out = '';
+        for (var i = 0; i < n; i++) {
+          var ch = final.charAt(i);
+          if (ch === ' ') { out += ' '; continue; }
+          var resolveAt = ((i + 1) / n) * 0.75; // settle left-to-right, last char by 75% of duration
+          if (p >= resolveAt) { out += ch; }
+          else { if (roll || glyphs[i] == null) glyphs[i] = rand(); out += glyphs[i]; }
+        }
+        el.textContent = out;
+        if (p < 1) requestAnimationFrame(frame);
+        else { el.textContent = final; if (done) done(); }
+      }
+      requestAnimationFrame(frame);
+    }
+    // after the first reveal, each title re-scrambles on its own unpredictable cadence, only while visible
+    function loop(el) {
+      var delay = 8000 + Math.random() * 7000;   // 8–15s, independent per title
+      setTimeout(function () {
+        if (inView(el)) scramble(el, function () { loop(el); });
+        else loop(el);
+      }, delay);
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          scramble(en.target, function () { loop(en.target); });
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.9 });
+    titles.forEach(function (t) { io.observe(t); });
   })();
 
   /* ---------- Spotify last-played ---------- */
