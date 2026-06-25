@@ -38,3 +38,6 @@ design-mockups/
 
 # wrangler local artifacts
 .wrangler/
+kalshi-proxy/
+old/
+image.png
