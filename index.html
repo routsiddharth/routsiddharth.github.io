@@ -883,6 +883,22 @@
 
         <div class="work-item">
           <button class="work-summary" aria-expanded="false">
+            <span class="work-name">Vela</span>
+            <span class="work-kind">Kalshi trading engine · 2026</span>
+            <span class="work-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="work-body"><div class="work-body-inner">
+            <p class="work-desc">Statistical-arbitrage engine for Kalshi's short-dated crypto binaries, deployed on real capital across concurrent BTC and ETH bots. Contracts settle on a 60-second TWAP, so once ~45 of 60 samples are banked the outcome is near-determined while the book still quotes off live price. Vela reconstructs the settling average in real time from Binance + Kalshi WebSocket feeds — with a causal basis de-bias for the ~3.5 bps Binance→RTI premium — and fires maker or taker orders only when expected value clears modeled fees, gated by per-asset confidence thresholds (BTC ≥0.84, ETH ≥0.98).</p>
+            <div class="work-foot">
+              <span class="work-result">5.6¢ edge / contract</span>
+              <span class="work-stack">Python · WebSockets · SQLite</span>
+              <a class="work-link" href="https://github.com/routsiddharth/vela" target="_blank" rel="noopener">View repo →</a>
+            </div>
+          </div></div>
+        </div>
+
+        <div class="work-item">
+          <button class="work-summary" aria-expanded="false">
             <span class="work-name">IMC Prosperity 4</span>
             <span class="work-kind">algorithmic trading competition · 2026</span>
             <span class="work-plus" aria-hidden="true">+</span>
