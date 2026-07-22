@@ -57,6 +57,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .rail-top { display: flex; flex-direction: column; gap: 28px; }
+.rail-id { display: flex; flex-direction: column; }
 
 .headshot {
   width: 52px;
@@ -88,6 +89,7 @@ a { color: inherit; text-decoration: none; }
   font-size: 13.5px;
   line-height: 1.5;
   max-width: 200px;
+  margin: 10px 0 0;
 }
 
 .label {
@@ -98,7 +100,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* rail nav */
-.rail-nav { display: flex; flex-direction: column; gap: 9px; margin-top: 4px; }
+.rail-nav { display: flex; flex-direction: column; gap: 9px; margin-top: 18px; }
 .rail-nav a {
   color: var(--dim);
   font-size: 13px;
