@@ -3,8 +3,9 @@
   --bg-soft: #0d0e0f;
   --dialog-bg: #0a0a0b;
   --ink: #ece9e3;
-  --dim: #8a8a86;
-  --faint: #5b5b58;
+  --ink-hi: #ffffff;
+  --dim: #ece9e3;
+  --faint: #ece9e3;
   --hair: rgba(255,255,255,0.08);
   --hair-soft: rgba(255,255,255,0.05);
   --accent: #5fae7e;
@@ -119,10 +120,10 @@ a { color: inherit; text-decoration: none; }
   transform-origin: left;
   transition: transform 0.35s cubic-bezier(0.2,0.6,0.2,1);
 }
-.rail-nav a:hover { color: var(--ink); }
+.rail-nav a:hover { color: var(--ink-hi); }
 .rail-nav a:hover::after { transform: scaleX(1); }
 /* current section (scrollspy) — same treatment as hover, persistent */
-.rail-nav a.active { color: var(--ink); }
+.rail-nav a.active { color: var(--ink-hi); }
 .rail-nav a.active::after { transform: scaleX(1); }
 
 .rail-bottom { display: flex; flex-direction: column; gap: 26px; }
@@ -133,7 +134,7 @@ a { color: inherit; text-decoration: none; }
   line-height: 0;
   transition: color 0.3s ease, transform 0.3s ease;
 }
-.socials a:hover { color: var(--ink); transform: translateY(-1px); }
+.socials a:hover { color: var(--ink-hi); transform: translateY(-1px); }
 .socials svg { width: 17px; height: 17px; display: block; }
 
 /* now playing */
@@ -144,7 +145,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--dim);
   transition: color 0.3s ease;
 }
-.nowplaying:hover { color: var(--ink); }
+.nowplaying:hover { color: var(--ink-hi); }
 .np-art {
   position: relative;
   width: 34px; height: 34px;
@@ -204,7 +205,6 @@ section:first-child { padding-top: 36px; }
   margin-bottom: 40px;
   padding-bottom: 0;
 }
-.sec-num { font-size: 10.5px; letter-spacing: 0.22em; color: var(--faint); }
 .sec-title {
   font-size: 10.5px;
   letter-spacing: 0.22em;
@@ -312,7 +312,7 @@ section:first-child { padding-top: 36px; }
   gap: 9px;
   transition: color 0.3s ease;
 }
-.toggle:hover { color: var(--ink); }
+.toggle:hover { color: var(--ink-hi); }
 .toggle .tog-mark { color: var(--accent); font-size: 14px; line-height: 1; }
 
 /* ---------- selected work (expandable rows) ---------- */
@@ -450,7 +450,7 @@ section:first-child { padding-top: 36px; }
   position: relative;
   transition: color 0.3s ease;
 }
-.reach-elsewhere a:hover { color: var(--ink); }
+.reach-elsewhere a:hover { color: var(--ink-hi); }
 .reach-elsewhere a::after {
   content: ""; position: absolute; left: 0; bottom: -3px; width: 100%; height: 1px;
   background: var(--accent); transform: scaleX(0); transform-origin: left;
@@ -588,7 +588,7 @@ footer {
   z-index: 2;
   transition: color 0.3s ease, border-color 0.3s ease;
 }
-.map-dialog-close:hover { color: var(--ink); border-color: var(--accent); }
+.map-dialog-close:hover { color: var(--ink-hi); border-color: var(--accent); }
 .world-map { display: block; width: 100%; height: auto; }
 .map-land path { fill: var(--land); stroke: #2c2c30; stroke-width: 0.5; vector-effect: non-scaling-stroke; }
 .map-graticule line { stroke: rgba(255,255,255,0.04); stroke-width: 0.5; vector-effect: non-scaling-stroke; }
