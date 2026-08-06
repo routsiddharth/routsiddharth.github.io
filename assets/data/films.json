@@ -1,0 +1,149 @@
+{
+  "list": "https://letterboxd.com/sidr/list/siddus-five-stars/",
+  "films": [
+    {
+      "title": "The Prestige",
+      "year": 2006,
+      "slug": "the-prestige",
+      "url": "https://letterboxd.com/film/the-prestige/",
+      "tmdb": 1124,
+      "poster": "assets/images/films/the-prestige.jpg"
+    },
+    {
+      "title": "Ocean's Eleven",
+      "year": 2001,
+      "slug": "oceans-eleven-2001",
+      "url": "https://letterboxd.com/film/oceans-eleven-2001/",
+      "tmdb": 161,
+      "poster": "assets/images/films/oceans-eleven-2001.jpg"
+    },
+    {
+      "title": "3 Idiots",
+      "year": 2009,
+      "slug": "3-idiots",
+      "url": "https://letterboxd.com/film/3-idiots/",
+      "tmdb": 20453,
+      "poster": "assets/images/films/3-idiots.jpg"
+    },
+    {
+      "title": "The Social Network",
+      "year": 2010,
+      "slug": "the-social-network",
+      "url": "https://letterboxd.com/film/the-social-network/",
+      "tmdb": 37799,
+      "poster": "assets/images/films/the-social-network.jpg"
+    },
+    {
+      "title": "Good Will Hunting",
+      "year": 1997,
+      "slug": "good-will-hunting",
+      "url": "https://letterboxd.com/film/good-will-hunting/",
+      "tmdb": 489,
+      "poster": "assets/images/films/good-will-hunting.jpg"
+    },
+    {
+      "title": "(500) Days of Summer",
+      "year": 2009,
+      "slug": "500-days-of-summer",
+      "url": "https://letterboxd.com/film/500-days-of-summer/",
+      "tmdb": 19913,
+      "poster": "assets/images/films/500-days-of-summer.jpg"
+    },
+    {
+      "title": "WALL·E",
+      "year": 2008,
+      "slug": "walle",
+      "url": "https://letterboxd.com/film/walle/",
+      "tmdb": 10681,
+      "poster": "assets/images/films/walle.jpg"
+    },
+    {
+      "title": "Zindagi Na Milegi Dobara",
+      "year": 2011,
+      "slug": "zindagi-na-milegi-dobara",
+      "url": "https://letterboxd.com/film/zindagi-na-milegi-dobara/",
+      "tmdb": 61202,
+      "poster": "assets/images/films/zindagi-na-milegi-dobara.jpg"
+    },
+    {
+      "title": "Dead Poets Society",
+      "year": 1989,
+      "slug": "dead-poets-society",
+      "url": "https://letterboxd.com/film/dead-poets-society/",
+      "tmdb": 207,
+      "poster": "assets/images/films/dead-poets-society.jpg"
+    },
+    {
+      "title": "Guardians of the Galaxy",
+      "year": 2014,
+      "slug": "guardians-of-the-galaxy",
+      "url": "https://letterboxd.com/film/guardians-of-the-galaxy/",
+      "tmdb": 118340,
+      "poster": "assets/images/films/guardians-of-the-galaxy.jpg"
+    },
+    {
+      "title": "Knives Out",
+      "year": 2019,
+      "slug": "knives-out-2019",
+      "url": "https://letterboxd.com/film/knives-out-2019/",
+      "tmdb": 546554,
+      "poster": "assets/images/films/knives-out-2019.jpg"
+    },
+    {
+      "title": "21 Jump Street",
+      "year": 2012,
+      "slug": "21-jump-street",
+      "url": "https://letterboxd.com/film/21-jump-street/",
+      "tmdb": 64688,
+      "poster": "assets/images/films/21-jump-street.jpg"
+    },
+    {
+      "title": "Nightcrawler",
+      "year": 2014,
+      "slug": "nightcrawler",
+      "url": "https://letterboxd.com/film/nightcrawler/",
+      "tmdb": 242582,
+      "poster": "assets/images/films/nightcrawler.jpg"
+    },
+    {
+      "title": "The Martian",
+      "year": 2015,
+      "slug": "the-martian",
+      "url": "https://letterboxd.com/film/the-martian/",
+      "tmdb": 286217,
+      "poster": "assets/images/films/the-martian.jpg"
+    },
+    {
+      "title": "Spider-Man: Into the Spider-Verse",
+      "year": 2018,
+      "slug": "spider-man-into-the-spider-verse",
+      "url": "https://letterboxd.com/film/spider-man-into-the-spider-verse/",
+      "tmdb": 324857,
+      "poster": "assets/images/films/spider-man-into-the-spider-verse.jpg"
+    },
+    {
+      "title": "21",
+      "year": 2008,
+      "slug": "21",
+      "url": "https://letterboxd.com/film/21/",
+      "tmdb": 8065,
+      "poster": "assets/images/films/21.jpg"
+    },
+    {
+      "title": "Moneyball",
+      "year": 2011,
+      "slug": "moneyball",
+      "url": "https://letterboxd.com/film/moneyball/",
+      "tmdb": 60308,
+      "poster": "assets/images/films/moneyball.jpg"
+    },
+    {
+      "title": "Black Panther",
+      "year": 2018,
+      "slug": "black-panther",
+      "url": "https://letterboxd.com/film/black-panther/",
+      "tmdb": 284054,
+      "poster": "assets/images/films/black-panther.jpg"
+    }
+  ]
+}

@@ -135,6 +135,96 @@
     .catch(function () { if (card) card.dataset.state = 'error'; if (cardM) cardM.dataset.state = 'error'; });
 })();
 
+/* ---------- five-star films ---------- */
+(function () {
+  var wrap = document.getElementById('films');
+  var strip = document.getElementById('film-strip');
+  if (!wrap || !strip) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var arrows = Array.prototype.slice.call(wrap.querySelectorAll('.film-arrow'));
+  var raf = null;
+
+  /* the list is unranked, so deal it fresh on every visit */
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function render(films) {
+    var frag = document.createDocumentFragment();
+    films.forEach(function (f, i) {
+      var label = f.year ? f.title + ' (' + f.year + ')' : f.title;
+      var a = document.createElement('a');
+      a.className = 'film';
+      a.href = f.url || '#';
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.title = label;
+      if (f.poster) {
+        var img = document.createElement('img');
+        img.className = 'film-poster film-img';
+        img.src = f.poster;
+        img.alt = label;
+        img.loading = i < 6 ? 'eager' : 'lazy';   // only the first screenful is worth blocking on
+        img.decoding = 'async';
+        a.appendChild(img);
+      } else {
+        var span = document.createElement('span');
+        span.className = 'film-poster film-blank';
+        span.textContent = label;
+        a.appendChild(span);
+      }
+      frag.appendChild(a);
+    });
+    strip.appendChild(frag);
+  }
+
+  /* one poster + one gap, measured rather than assumed — the width is fluid */
+  function stepSize() {
+    var first = strip.querySelector('.film');
+    if (!first) return strip.clientWidth;
+    var gap = parseFloat(getComputedStyle(strip).columnGap);
+    return first.getBoundingClientRect().width + (isFinite(gap) ? gap : 0);
+  }
+
+  function syncArrows() {
+    raf = null;
+    var max = strip.scrollWidth - strip.clientWidth;
+    arrows.forEach(function (b) {
+      var fwd = b.dataset.dir === '1';
+      b.disabled = max <= 1 || (fwd ? strip.scrollLeft >= max - 1 : strip.scrollLeft <= 1);
+    });
+  }
+  function queueSync() { if (raf == null) raf = requestAnimationFrame(syncArrows); }
+
+  arrows.forEach(function (b) {
+    b.addEventListener('click', function () {
+      strip.scrollBy({
+        left: stepSize() * parseInt(b.dataset.dir, 10),
+        behavior: reduce ? 'auto' : 'smooth'
+      });
+    });
+  });
+  strip.addEventListener('scroll', queueSync, { passive: true });
+  window.addEventListener('resize', queueSync);
+
+  fetch('assets/data/films.json')
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
+    .then(function (d) {
+      var films = ((d && d.films) || []).filter(function (f) { return f && f.title; });
+      if (!films.length) return;               // nothing to show — leave the band hidden
+      render(shuffle(films));
+      var src = document.getElementById('film-src');
+      if (src && d.list) src.href = d.list;
+      wrap.hidden = false;
+      syncArrows();
+    })
+    .catch(function () { /* stays hidden rather than rendering an empty band */ });
+})();
+
 /* ---------- world map popup ---------- */
 (function () {
   var SVG_NS = 'http://www.w3.org/2000/svg';

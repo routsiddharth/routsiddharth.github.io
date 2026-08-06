@@ -430,6 +430,24 @@
           <div class="stat-val"><span class="muted">too many to count</span></div>
         </div>
       </div>
+
+      <!-- five-star films — populated from assets/data/films.json, hidden until it loads -->
+      <div class="films" id="films" hidden>
+        <div class="film-strip" id="film-strip" tabindex="0" role="region" aria-label="Films rated five stars on Letterboxd"></div>
+        <div class="film-bar">
+          <span class="label">Five stars</span>
+          <div class="film-nav">
+            <button type="button" class="film-arrow" data-dir="-1" aria-controls="film-strip" aria-label="Scroll to previous films">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+            </button>
+            <button type="button" class="film-arrow" data-dir="1" aria-controls="film-strip" aria-label="Scroll to next films">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+            </button>
+          </div>
+          <a class="film-src" id="film-src" href="https://letterboxd.com/sidr/list/siddus-five-stars/" target="_blank" rel="noopener">Letterboxd</a>
+        </div>
+      </div>
+
       <p class="stat-foot reveal">(and counting!)</p>
     </section>
 
@@ -449,6 +467,7 @@
       <span>sidrout.com · new york</span>
       <span>last updated july 2026</span>
     </footer>
+    <p class="colophon">Film posters via <a href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>. This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
 
   </main>
 </div>
