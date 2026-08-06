@@ -151,6 +151,8 @@ a { color: inherit; text-decoration: none; }
 .socials svg { width: 17px; height: 17px; display: block; }
 
 /* now playing */
+.nowplaying[hidden],
+#spotify-widget[hidden] { display: none; }
 .nowplaying {
   display: flex;
   align-items: center;
@@ -493,8 +495,7 @@ section:first-child { padding-top: 36px; }
   transition: color 0.3s ease, opacity 0.3s ease;
 }
 .film-arrow svg { width: 17px; height: 17px; display: block; }
-.film-arrow:hover:not(:disabled) { color: var(--accent); }
-.film-arrow:disabled { opacity: 0.25; cursor: default; }
+.film-arrow:hover { color: var(--accent); }
 .film-src {
   font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--faint);

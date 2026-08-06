@@ -117,22 +117,33 @@
 
 /* ---------- Spotify last-played ---------- */
 (function () {
+  var widget = document.getElementById('spotify-widget');
   var card = document.getElementById('spotify-link');
   var cardM = document.getElementById('spotify-link-m');
   if (!card && !cardM) return;
   fetch('https://spotify-last-played.routsiddharth2911.workers.dev/last-played', { mode: 'cors' })
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (d) {
-      if (!d || !d.name) return;
-      var tr = document.getElementById('spotify-track'); if (tr) tr.textContent = d.name;
-      var trM = document.getElementById('spotify-track-m'); if (trM) trM.textContent = d.name;
-      var ar = document.getElementById('spotify-artist'); if (ar) ar.textContent = d.artist || '';
-      var art = document.getElementById('spotify-album-art'); if (art && d.albumArt) art.src = d.albumArt;
+      var name = d && typeof d.name === 'string' ? d.name.trim() : '';
+      if (!name) return;
+      var artist = typeof d.artist === 'string' ? d.artist.trim() : '';
+      var tr = document.getElementById('spotify-track'); if (tr) tr.textContent = name;
+      var trM = document.getElementById('spotify-track-m'); if (trM) trM.textContent = name;
+      var ar = document.getElementById('spotify-artist'); if (ar) ar.textContent = artist;
+      var art = document.getElementById('spotify-album-art');
+      if (art && d.albumArt) {
+        var artImg = document.createElement('img');
+        artImg.src = d.albumArt;
+        artImg.alt = '';
+        art.appendChild(artImg);
+      }
       if (d.songUrl) { if (card) card.href = d.songUrl; if (cardM) cardM.href = d.songUrl; }
-      if (card) card.dataset.state = 'ready';
-      if (cardM) cardM.dataset.state = 'ready';
+      var label = 'Listen to ' + name + (artist ? ' by ' + artist : '') + ' on Spotify';
+      if (card) { card.dataset.state = 'ready'; card.setAttribute('aria-label', label); }
+      if (cardM) { cardM.dataset.state = 'ready'; cardM.setAttribute('aria-label', label); cardM.hidden = false; }
+      if (widget) widget.hidden = false;
     })
-    .catch(function () { if (card) card.dataset.state = 'error'; if (cardM) cardM.dataset.state = 'error'; });
+    .catch(function () { /* live data is optional; keep the widget hidden on failure */ });
 })();
 
 /* ---------- five-star films ---------- */
@@ -143,6 +154,7 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var arrows = Array.prototype.slice.call(wrap.querySelectorAll('.film-arrow'));
   var raf = null;
+  var cycleWidth = 0;
 
   /* the list is unranked, so deal it fresh on every visit */
   function shuffle(a) {
@@ -153,7 +165,7 @@
     return a;
   }
 
-  function render(films) {
+  function renderCopy(films, copyIndex) {
     var frag = document.createDocumentFragment();
     films.forEach(function (f, i) {
       var label = f.year ? f.title + ' (' + f.year + ')' : f.title;
@@ -163,12 +175,16 @@
       a.target = '_blank';
       a.rel = 'noopener';
       a.title = label;
+      if (copyIndex !== 1) {
+        a.setAttribute('aria-hidden', 'true');
+        a.tabIndex = -1;
+      }
       if (f.poster) {
         var img = document.createElement('img');
         img.className = 'film-poster film-img';
         img.src = f.poster;
-        img.alt = label;
-        img.loading = i < 6 ? 'eager' : 'lazy';   // only the first screenful is worth blocking on
+        img.alt = copyIndex === 1 ? label : '';
+        img.loading = copyIndex === 1 && i < 6 ? 'eager' : 'lazy';
         img.decoding = 'async';
         a.appendChild(img);
       } else {
@@ -182,6 +198,11 @@
     strip.appendChild(frag);
   }
 
+  function render(films) {
+    /* Three identical runs let us recenter on the middle one without a visible seam. */
+    for (var copy = 0; copy < 3; copy++) renderCopy(films, copy);
+  }
+
   /* one poster + one gap, measured rather than assumed — the width is fluid */
   function stepSize() {
     var first = strip.querySelector('.film');
@@ -190,15 +211,18 @@
     return first.getBoundingClientRect().width + (isFinite(gap) ? gap : 0);
   }
 
-  function syncArrows() {
-    raf = null;
-    var max = strip.scrollWidth - strip.clientWidth;
-    arrows.forEach(function (b) {
-      var fwd = b.dataset.dir === '1';
-      b.disabled = max <= 1 || (fwd ? strip.scrollLeft >= max - 1 : strip.scrollLeft <= 1);
-    });
+  function measureCycle(filmCount) {
+    cycleWidth = stepSize() * filmCount;
+    return cycleWidth;
   }
-  function queueSync() { if (raf == null) raf = requestAnimationFrame(syncArrows); }
+
+  function keepLoopCentered() {
+    raf = null;
+    if (!cycleWidth) return;
+    if (strip.scrollLeft < cycleWidth * 0.5) strip.scrollLeft += cycleWidth;
+    else if (strip.scrollLeft >= cycleWidth * 1.5) strip.scrollLeft -= cycleWidth;
+  }
+  function queueLoopCheck() { if (raf == null) raf = requestAnimationFrame(keepLoopCentered); }
 
   arrows.forEach(function (b) {
     b.addEventListener('click', function () {
@@ -208,19 +232,28 @@
       });
     });
   });
-  strip.addEventListener('scroll', queueSync, { passive: true });
-  window.addEventListener('resize', queueSync);
+  strip.addEventListener('scroll', queueLoopCheck, { passive: true });
 
   fetch('assets/data/films.json')
     .then(function (r) { return r.ok ? r.json() : Promise.reject(); })
     .then(function (d) {
       var films = ((d && d.films) || []).filter(function (f) { return f && f.title; });
       if (!films.length) return;               // nothing to show — leave the band hidden
-      render(shuffle(films));
+      films = shuffle(films.slice());
+      render(films);
       var src = document.getElementById('film-src');
       if (src && d.list) src.href = d.list;
       wrap.hidden = false;
-      syncArrows();
+      measureCycle(films.length);
+      strip.scrollLeft = cycleWidth;
+      window.addEventListener('resize', function () {
+        var oldCycle = cycleWidth;
+        var phase = oldCycle ? ((strip.scrollLeft % oldCycle) + oldCycle) % oldCycle / oldCycle : 0;
+        requestAnimationFrame(function () {
+          measureCycle(films.length);
+          strip.scrollLeft = cycleWidth * (1 + phase);
+        });
+      });
     })
     .catch(function () { /* stays hidden rather than rendering an empty band */ });
 })();
